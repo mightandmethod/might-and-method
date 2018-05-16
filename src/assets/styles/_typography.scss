@@ -1,0 +1,69 @@
+// Variables
+$baseFontSize: 18px;
+$systemFonts: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif';
+$sansSerif: 'Work Sans', $systemFonts;
+$serif: 'butler', serif;
+
+// Extensions
+%headline {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.45rem;
+  color: inherit;
+  font-family: $serif;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+// Styles
+html,
+body {
+  color: $black;
+  font-family: $sansSerif;
+  font-weight: normal;
+  word-wrap: break-word;
+  font-kerning: normal;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  line-height: 1.75;
+  font-size: $baseFontSize;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+h1 {
+  @extend %headline;
+  font-size: 2.25rem;
+  line-height: 1.1;
+}
+h2 {
+  @extend %headline;
+  font-size: 1.62671rem;
+  line-height: 1.1;
+}
+h3 {
+  @extend %headline;
+  font-size: 1.38316rem;
+  line-height: 1.1;
+}
+h4 {
+  @extend %headline;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+h5 {
+  @extend %headline;
+  font-size: 0.85028rem;
+  line-height: 1.1;
+}
+h6 {
+  @extend %headline;
+  font-size: 0.78405rem;
+  line-height: 1.1;
+}

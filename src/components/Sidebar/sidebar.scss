@@ -1,0 +1,36 @@
+@import '../../assets/styles/bundle.scss';
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2em;
+  background-color: $white;
+  height: 100vh;
+  position: fixed;
+  width: 17%;
+
+  &__logo {
+    a {
+      display: block;
+    }
+  }
+
+  &__tagline {
+    h6 {
+      color: $brinkpink;
+      font-size: 0.7em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 0 0 1em;
+      line-height: 1.35;
+    }
+
+    p {
+      font-weight: 800;
+      font-size: em(25px);
+      line-height: 1.2;
+      color: $bluegem;
+    }
+  }
+}
