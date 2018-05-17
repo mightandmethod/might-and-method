@@ -1,9 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import logo from '../../assets/images/logo.svg'
-
-import './sidebar.scss'
+import logo from '../assets/images/logo.svg'
 
 const Sidebar = () => (
   <div className="sidebar">

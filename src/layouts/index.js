@@ -1,61 +1,44 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-
-// Components
-import Sidebar from '../components/Sidebar'
-
-// Assets
 import 'typeface-work-sans'
 import 'typeface-butler'
-import favicon from '../assets/images/favicon.png'
+import '../assets/scss/main.scss'
 
-// Stylesheets
-import './index.scss'
+//import Footer from '../components/Footer'
 
-const Layout = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: data.site.siteMetadata.description },
-        { name: 'keywords', content: data.site.siteMetadata.keywords },
-      ]}
-    />
-    <div
-      className="mm"
-      style={{
-        display: 'flex',
-        width: '100%'
-      }}
-    >
-      <Sidebar />
-      <div
-        style={{
-          marginLeft: '17%',
-          padding: '2em'
-        }}
-      >
-        {children()}
-      </div>
-    </div>
-  </div>
-)
-
-Layout.propTypes = {
-  children: PropTypes.func,
-}
-
-export default Layout
-
-export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        keywords
-      }
+class Template extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: 'is-loading'
     }
   }
-`
+
+  componentDidMount () {
+    this.timeoutId = setTimeout(() => {
+        this.setState({loading: ''});
+    }, 100);
+  }
+
+  componentWillUnmount () {
+    if (this.timeoutId) {
+        clearTimeout(this.timeoutId);
+    }
+  }
+
+  render() {
+    const { children } = this.props
+
+    return (
+      <div className={`body ${this.state.loading}`}>
+          {children()}
+          {/*<Footer />*/}
+      </div>
+    )
+  }
+}
+
+Template.propTypes = {
+  children: React.PropTypes.func
+}
+
+export default Template

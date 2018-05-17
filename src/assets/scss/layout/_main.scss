@@ -1,6 +1,11 @@
-@import '../assets/styles/bundle.scss';
+#mm {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
 
-.container {
+#main {
+  margin-left: 17%;
   width: 100%;
 }
 

@@ -1,9 +1,3 @@
-// Variables
-$baseFontSize: 18px;
-$systemFonts: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif';
-$sansSerif: 'Work Sans', $systemFonts;
-$serif: 'butler', serif;
-
 // Extensions
 %headline {
   margin-left: 0;
@@ -18,6 +12,7 @@ $serif: 'butler', serif;
   font-family: $serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
+  line-height: 1.1;
 }
 
 // Styles
@@ -40,30 +35,24 @@ p {
 h1 {
   @extend %headline;
   font-size: 2.25rem;
-  line-height: 1.1;
 }
 h2 {
   @extend %headline;
   font-size: 1.62671rem;
-  line-height: 1.1;
 }
 h3 {
   @extend %headline;
   font-size: 1.38316rem;
-  line-height: 1.1;
 }
 h4 {
   @extend %headline;
   font-size: 1rem;
-  line-height: 1.1;
 }
 h5 {
   @extend %headline;
   font-size: 0.85028rem;
-  line-height: 1.1;
 }
 h6 {
   @extend %headline;
   font-size: 0.78405rem;
-  line-height: 1.1;
 }
