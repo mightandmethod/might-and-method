@@ -5,12 +5,11 @@
 @import 'libs/mixins';
 
 // Base
-@import 'base/colors';
 @import 'base/typography';
 
 // Components
 //@import 'components/button';
-//@import 'components/buttonlink';
+@import 'components/buttonlink';
 
 // Layout
 @import 'layout/sidebar';

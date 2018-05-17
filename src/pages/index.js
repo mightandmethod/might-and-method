@@ -44,7 +44,8 @@ class Index extends React.Component {
           <div className="wrapper bg-whiteish">
             <h1>We can help your organization <span>do more</span></h1>
             <div style={{
-              display: 'flex'  
+              display: 'flex',
+              alignItems: 'center',
             }}>
               <ButtonLink
                 href="/contact"
