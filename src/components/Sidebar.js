@@ -22,7 +22,25 @@ const Sidebar = () => (
       <p>We build custom digital solutions to help you thrive online</p>
     </div>
 
-    <div></div>
+    <div className="sidebar__nav">
+      
+    </div>
+
+    <div className="sidebar__footer">
+      <section>
+        <div>
+          <h1>&amp;</h1>
+          <ul>
+            <li>Indianapolis</li>
+            <li>Nashville</li>
+          </ul>
+        </div>
+        <div className="copyright">
+          <p>&copy; { new Date().getFullYear() }</p>
+          <p>All rights reserved.</p>
+        </div>
+      </section>
+    </div>
   </div>
 )
 

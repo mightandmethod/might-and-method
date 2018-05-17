@@ -1,5 +1,7 @@
 .wrapper {
-  padding: 2em;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
 
   &.bg-whiteish {
     background: $whiteish;

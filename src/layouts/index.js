@@ -3,7 +3,7 @@ import 'typeface-work-sans'
 import 'typeface-butler'
 import '../assets/scss/main.scss'
 
-//import Footer from '../components/Footer'
+import Footer from '../components/Footer'
 
 class Template extends React.Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class Template extends React.Component {
     return (
       <div className={`body ${this.state.loading}`}>
           {children()}
-          {/*<Footer />*/}
+          <Footer />
       </div>
     )
   }

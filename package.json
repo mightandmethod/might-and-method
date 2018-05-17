@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "author": "Jake Long <jacobelong@gmail.com>",
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/react-fontawesome": "^0.0.20",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-favicon": "^2.1.1",
