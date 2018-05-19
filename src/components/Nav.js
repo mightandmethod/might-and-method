@@ -1,31 +1,34 @@
 import React from 'react'
-import Scrollspy from 'react-scrollspy'
-import Scroll from './Scroll'
+import Link from 'gatsby-link'
+
+import logo from '../assets/images/logo-red.svg'
 
 const Nav = (props) => (
   <nav id="nav" className={props.sticky ? 'alt' : ''}>
-    <Scrollspy items={ ['intro', 'first', 'second', 'cta'] } currentClassName="is-active" offset={-300}>
+    <Link to="/">
+      <img
+        src={logo}
+        alt="Might & Method"
+        style={{
+          width: '40px'
+        }}
+      />
+    </Link>
+
+    <ul>
       <li>
-        <Scroll type="id" element="intro">
-            <a href="#">Introduction</a>
-        </Scroll>
+        <Link to="/work">Our work</Link>
       </li>
       <li>
-        <Scroll type="id" element="first">
-            <a href="#">First Section</a>
-        </Scroll>
+        <Link to="/services">What we do</Link>
       </li>
       <li>
-        <Scroll type="id" element="second">
-            <a href="#">Second Section</a>
-        </Scroll>
+        <Link to="/about">About</Link>
       </li>
       <li>
-        <Scroll type="id" element="cta">
-            <a href="#">Get Started</a>
-        </Scroll>
+        <Link to="/contact">Contact</Link>
       </li>
-    </Scrollspy>
+    </ul>
   </nav>
 )
 

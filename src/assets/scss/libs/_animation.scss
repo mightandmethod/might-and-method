@@ -1,0 +1,18 @@
+@keyframes footer-link-hover {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0)
+  }
+  50% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%)
+  }
+  50.01% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%)
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0)
+  }
+}

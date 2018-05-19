@@ -2,13 +2,10 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import Waypoint from 'react-waypoint'
+// import Waypoint from 'react-waypoint'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import faChevronDown from '@fortawesome/fontawesome-free-solid/faChevronDown'
+import faArrowDown from '@fortawesome/fontawesome-free-solid/faArrowDown'
 
-import logo from '../assets/images/logo.svg'
-
-import Nav from '../components/Nav'
 import ButtonLink from '../components/ButtonLink'
 
 class Index extends React.Component {
@@ -28,42 +25,16 @@ class Index extends React.Component {
   }
 
   render() {
-
     return (
-      <div id="mm">
+      <div>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
-
-        <Waypoint
+        {/* <Waypoint
           onEnter={this._handleWaypointEnter}
           onLeave={this._handleWaypointLeave}
         >
-        </Waypoint>
-
-        <div className="sidebar">
-          <div className="sidebar__logo">
-            <Link to="/">
-              <img
-                src={logo}
-                alt=""
-                style={{
-                  width: '50px'
-                }}
-              />
-            </Link>
-          </div>
-
-          <div className="sidebar__tagline">
-            <h6>Might &amp;<br/>Method</h6>
-            <p>We build custom digital solutions to help you thrive online</p>
-          </div>
-
-          <div className="sidebar__nav">
-            
-          </div>
-        </div>
-
-        <div id="main">
-          <section className="wrapper bg-whiteish">
+        </Waypoint> */}
+        <div className="home-main">
+          <section className="wrapper">
             <div className="hero">
               <h1>We can help your organization <span>do more.</span></h1>
               <div className="hero__links">
@@ -73,7 +44,7 @@ class Index extends React.Component {
                   text="Let's get started"
                 />
                 <a href="#work">
-                  See some of our work <FontAwesomeIcon icon={faChevronDown} />
+                  See some of our work <FontAwesomeIcon icon={faArrowDown} />
                 </a>
               </div> 
             </div>

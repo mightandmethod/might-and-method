@@ -1,12 +1,9 @@
-#mm {
+.home-main {
   display: flex;
+  height: 100vh;
   width: 100%;
-  min-height: 100vh;
-}
-
-#main {
-  min-width: 87%;
-  display: flex;
+  background: darken($bluegem, 25%); /* fallback */
+  background: linear-gradient(135deg, $bluegem 40%, darken($bluegem, 25%));
 }
 
 .hero {
