@@ -3,16 +3,16 @@
   height: 100vh;
   width: 100%;
   background: darken($bluegem, 25%); /* fallback */
-  background: linear-gradient(135deg, $bluegem 40%, darken($bluegem, 25%));
+  background: linear-gradient(135deg, $bluegem 30%, darken($bluegem, 35%));
 }
 
 .hero {
-  width: 80%;
+  width: 70%;
   margin: auto;
 
   h1 {
     font-size: em(98px);
-    color: $bluegem;
+    color: $white;
     font-weight: 400;
     line-height: 1;
     margin-bottom: 0.5em;
@@ -31,11 +31,11 @@
     justify-content: space-between;
 
     a:not(.button-link) {
-      color: #B3ADAD;
-      transition: color 0.3s ease-out;
+      color: #9F96D6;
+      transition: color 0.25s ease-out;
 
       &:hover {
-        color: $darkgrey;
+        color: $brinkpink;
       }
 
       svg {
@@ -46,6 +46,16 @@
       }
     }
   }
+}
+
+.scroll {
+  position: absolute;
+  margin: 0 auto;
+  bottom: 1.5em;
+  left: 50%;
+  right: 50%;
+  opacity: 0.4;
+  animation: 2s infinite ease-in-out 1.5s scrollBounce;
 }
 
 @media only screen and (max-width: 480px) {

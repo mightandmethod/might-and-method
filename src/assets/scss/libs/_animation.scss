@@ -1,18 +1,14 @@
-@keyframes footer-link-hover {
+@keyframes scrollBounce {
   0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0)
+    transform: translateY(0)
   }
   50% {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%)
+    transform: translateY(-10px)
   }
   50.01% {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%)
+    transform: translateY(-10px)
   }
   to {
-    -webkit-transform: translateX(0);
-    transform: translateX(0)
+    transform: translateY(0)
   }
 }

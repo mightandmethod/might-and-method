@@ -6,7 +6,11 @@ import Helmet from 'react-helmet'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faArrowDown from '@fortawesome/fontawesome-free-solid/faArrowDown'
 
+import scroll from '../assets/images/scroll.svg'
+
 import ButtonLink from '../components/ButtonLink'
+import WorkSamples from '../components/WorkSamples'
+import Work from '../components/Work'
 
 class Index extends React.Component {
   constructor(props) {
@@ -36,7 +40,7 @@ class Index extends React.Component {
         <div className="home-main">
           <section className="wrapper">
             <div className="hero">
-              <h1>We can help your organization <span>do more.</span></h1>
+              <h1>We build digital solutions to help your company <span>thrive.</span></h1>
               <div className="hero__links">
                 <ButtonLink
                   href="/contact"
@@ -48,9 +52,37 @@ class Index extends React.Component {
                 </a>
               </div> 
             </div>
+            <img src={scroll} alt="Scroll for more" className="scroll" />
           </section>
         </div>
-      </div>
+
+        <WorkSamples>
+          <Work
+            category="ui/ux design"
+            title="J&J Financial"
+            slug="jj-financial"
+            thumbnail={'jjf/1.jpg'}
+          />
+          <Work
+            category="ui/ux design"
+            title="J&J Financial"
+            slug="jj-financial"
+            thumbnail={'jjf/1.jpg'}
+          />
+          <Work
+            category="ui/ux design"
+            title="J&J Financial"
+            slug="jj-financial"
+            thumbnail={'jjf/1.jpg'}
+          />
+          <Work
+            category="ui/ux design"
+            title="J&J Financial"
+            slug="jj-financial"
+            thumbnail={'jjf/1.jpg'}
+          />
+        </WorkSamples>
+      </div> // React containment div
     )
   }
 }
