@@ -11,6 +11,8 @@ import scroll from '../assets/images/scroll.svg'
 import ButtonLink from '../components/ButtonLink'
 import WorkSamples from '../components/WorkSamples'
 import Work from '../components/Work'
+import ServicesWrapper from '../components/ServicesWrapper'
+import Service from '../components/Service'
 
 class Index extends React.Component {
   constructor(props) {
@@ -37,8 +39,8 @@ class Index extends React.Component {
           onLeave={this._handleWaypointLeave}
         >
         </Waypoint> */}
-        <div className="home-main">
-          <section className="wrapper">
+        <section className="home-main">
+          <div className="wrapper">
             <div className="hero">
               <h1>We build digital solutions to help your company <span>thrive.</span></h1>
               <div className="hero__links">
@@ -48,13 +50,42 @@ class Index extends React.Component {
                   text="Let's get started"
                 />
                 <a href="#work">
-                  See some of our work <FontAwesomeIcon icon={faArrowDown} />
+                  Learn more about us <FontAwesomeIcon icon={faArrowDown} />
                 </a>
               </div> 
             </div>
             <img src={scroll} alt="Scroll for more" className="scroll" />
-          </section>
-        </div>
+          </div>
+        </section>
+
+        <section className="services">
+          <header>
+            <h2>What we do</h2>
+            <p>Your company has a story to tell. We can help you build a successful strategy from start to finish to share it as effectively as possible. Check out some of our services below to learn more about how we can work together to create something awesome!</p>
+          </header>
+          <ServicesWrapper>
+            <Service
+              label="Website, mobile, & user experience design"
+              desc="The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more – there’s an entire world of internet advertising opportunities to explore. We specialize in internet marketing strategy, online advertising, web marketing and conversion."
+              href="web"
+            />
+            <Service
+              label="Digital product design & development"
+              desc="The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more – there’s an entire world of internet advertising opportunities to explore. We specialize in internet marketing strategy, online advertising, web marketing and conversion."
+              href="digital"
+            />
+            <Service
+              label="Brand strategy, identity, & digital marketing"
+              desc="The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more – there’s an entire world of internet advertising opportunities to explore. We specialize in internet marketing strategy, online advertising, web marketing and conversion."
+              href="marketing"
+            />
+            <Service
+              label="Let's create something new together"
+              desc="The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more – there’s an entire world of internet advertising opportunities to explore. We specialize in internet marketing strategy, online advertising, web marketing and conversion."
+              href="marketing"
+            />
+          </ServicesWrapper>
+        </section>
 
         <WorkSamples>
           <Work
