@@ -57,12 +57,36 @@
 
       &:first-child {
         a {
+          display: inline-block;
           font-weight: 800;
-          border-bottom: 2px solid #5E5980;
           letter-spacing: 0.03em;
+          position: relative;
+
+          &:before {
+            content: "";
+            display: block;
+            height: 2px;
+            width: 100%;
+            border-bottom: 2px solid #5E5980;
+            position: absolute;
+            bottom: 0;
+          }
+
+          &:after {
+            content: "";
+            display: block;
+            height: 2px;
+            border-bottom: 2px solid $white;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+          }
 
           &:hover {
-            border-bottom-color: $white;
+            &:after {
+              opacity: 1;
+              transform: translateX(0);
+            }
           }
         }
       }
@@ -81,22 +105,26 @@
   a {
     display: inline-block;
     color: $white;
-    border-bottom: 2px solid transparent;
     position: relative;
+    overflow: hidden;
 
-    transition: border-bottom-color 0.3s ease-out, transform 0.3s ease-out;
+    &:after {
+      content: "";
+      display: block;
+      height: 2px;
+      border-bottom: 2px solid $white;
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+    }
 
-    &:hover {
-      border-bottom-color: $white;
-      transform: translateX(2px);
+    &:hover:after {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 
   ul {
     font-size: em(15px);
-
-    li + li {
-      margin-top: 1em;
-    }
   }
 }

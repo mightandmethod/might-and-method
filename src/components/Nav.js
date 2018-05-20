@@ -17,10 +17,13 @@ const Nav = (props) => (
 
     <ul>
       <li>
+        <Link to="/services">What we do</Link>
+      </li>
+      <li>
         <Link to="/work">Our work</Link>
       </li>
       <li>
-        <Link to="/services">What we do</Link>
+        <Link to="/pricing">Pricing</Link>
       </li>
       <li>
         <Link to="/about">About</Link>

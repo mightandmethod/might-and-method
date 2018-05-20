@@ -6,7 +6,7 @@
   font-weight: 800;
   line-height: 1;
 
-  transition: transform ease-out 0.3s;
+  transition: transform ease-out 0.25s, background-color 0.25s ease-out;
 
   &:after {
     content: "";
@@ -17,7 +17,7 @@
     top: 0;
     left: 0;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: box-shadow 0.3s ease-out;
+    transition: box-shadow 0.25s ease-out;
   }
 
   &:hover {
@@ -31,6 +31,10 @@
   &.primary {
     background-color: $brinkpink;
     color: $white;
+
+    &:hover {
+      background-color: darken($brinkpink, 5%);
+    }
   }
 
   &.secondary {
@@ -52,5 +56,18 @@
   &.large {
     padding: 1.25em 1.75em;
     font-size: em(20px);
+  }
+
+  &.has-arrow {
+    svg {
+      margin-left: 1em;
+      transition: transform 0.25s ease-out;
+    }
+
+    &:hover {
+      svg {
+        transform: translateX(3px);
+      }
+    }
   }
 }

@@ -21,19 +21,19 @@ const Footer = (props) => (
     <div className="footer__content">
       <div className="content__wrap">
         <div>
-          <h4>Contact</h4>
+          <h4>Let's chat</h4>
           <p><a href="mailto:cheers@mightandmethod.com">cheers@mightandmethod.com</a></p>
           <p>We proudly hail from the wonderful midwestern oases of Indianapolis, IN and Nashville, TN. If you’re in town(s), we’d love to grab a beer and get to know you.</p>
         </div>
 
         <div>
-          <h4>Work Showcase</h4>
+          <h4>Might & Method</h4>
           <ul>
-            <li><a href="/work/1">J&amp;J Financial</a></li>
-            <li><a href="/work/2">Westvleteren</a></li>
-            <li><a href="/work/3">Dave Ramsey</a></li>
-            <li><a href="/work/4">Intelligentsia</a></li>
-            <li><a href="/work/5">Your company</a></li>
+            <li><Link to="/about">Who we are</Link></li>
+            <li><Link to="/services">What we do</Link></li>
+            <li><Link to="/work">Work showcase</Link></li>
+            <li><Link to="/pricing">Pricing</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
 
