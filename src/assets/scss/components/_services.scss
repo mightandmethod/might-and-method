@@ -4,12 +4,12 @@
   header {
     margin: 0 auto;
     width: 65%;
-    margin-bottom: em(50px);
+    margin-bottom: em(100px);
 
     h2 {
       font-family: $sansSerif;
       color: $brinkpink;
-      font-size: em(11px);
+      font-size: em(10px);
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-bottom: 1em;
@@ -31,6 +31,13 @@
 
   > div {
     width: 23%;
+
+    &:last-child {
+      .service-item {
+        outline: 3px dashed $brinkpink;
+        outline-offset: -3px;
+      }
+    }
   }
 
   .service-item {
