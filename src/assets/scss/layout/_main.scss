@@ -30,14 +30,14 @@ body {
 
 .is-loading {
   .hero {
-    h1 {
+    h1 span {
       opacity: 0;
       transform: translateX(0.25em);
     }
 
     &__links {
       opacity: 0;
-      transform: translateX(1em);
+      transform: translateY(1em);
     }
   }
 }
@@ -52,11 +52,27 @@ body {
     font-weight: 400;
     line-height: 1;
     margin-bottom: 0.5em;
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 0.35s ease-out 0.25s, transform 0.35s ease-out 0.25s;
 
     span {
+      display: inline-block;
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+
+      &:nth-of-type(1) {
+        transition-delay: 0.25s;
+      }
+
+      &:nth-of-type(2) {
+        transition-delay: 0.35s;
+      }
+
+      &:last-of-type {
+        transition-delay: 0.45s;
+      }
+    }
+
+    span.bold {
       display: block;
       font-weight: 900;
       color: $brinkpink;
@@ -68,8 +84,8 @@ body {
     align-items: center;
     justify-content: space-between;
     opacity: 1;
-    transform: translateX(0);
-    transition: all 0.35s ease-out 0.5s;
+    transform: translateY(0);
+    transition: all 0.35s ease-out 0.6s;
 
     a:not(.button-link) {
       margin-left: 2em;

@@ -57,7 +57,7 @@ class Index extends React.Component {
         <section className="home-main">
           <div className="wrapper">
             <div className="hero">
-              <h1>We build digital solutions to help your company <span>thrive.</span></h1>
+              <h1><span>We build digital solutions</span> <span>to help your company</span> <span className="bold">thrive.</span></h1>
               <div className="hero__links">
                 <ButtonLink
                   href="/contact"
