@@ -40,6 +40,10 @@ body {
       transform: translateY(1em);
     }
   }
+
+  .scroll {
+    opacity: 0;
+  }
 }
 
 .hero {
@@ -60,15 +64,15 @@ body {
       transition: opacity 0.35s ease-out, transform 0.35s ease-out;
 
       &:nth-of-type(1) {
-        transition-delay: 0.25s;
+        transition-delay: 0.5s;
       }
 
       &:nth-of-type(2) {
-        transition-delay: 0.35s;
+        transition-delay: 0.75s;
       }
 
       &:last-of-type {
-        transition-delay: 0.45s;
+        transition-delay: 1s;
       }
     }
 
@@ -85,7 +89,7 @@ body {
     justify-content: space-between;
     opacity: 1;
     transform: translateY(0);
-    transition: all 0.35s ease-out 0.6s;
+    transition: all 0.35s ease-out 1.25s;
 
     a:not(.button-link) {
       margin-left: 2em;
@@ -119,7 +123,10 @@ body {
   left: 50%;
   right: 50%;
   opacity: 0.4;
-  animation: 2s infinite ease-in-out 1.5s scrollBounce;
+  transform: translateY(0);
+
+  transition: opacity 1s ease-out 2.25s;
+  animation: 2s infinite ease-in-out 4s scrollBounce;
 }
 
 @media only screen and (max-width: 480px) {

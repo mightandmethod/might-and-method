@@ -221,11 +221,13 @@ class Index extends React.Component {
               </div>
             </div> {/* /grid */}
 
-            <div style={{ width: '100%', textAlign: 'center' }}>
-              <Link to="/services">
-                See how we can help your company <FontAwesomeIcon icon={faArrowDown} />
-              </Link>
-            </div>
+            <Emerge>
+              <div style={{ width: '100%', textAlign: 'center' }}>
+                <Link to="/services">
+                  See how we can help your company <FontAwesomeIcon icon={faArrowDown} />
+                </Link>
+              </div>
+            </Emerge>
           </div>
         </section>
 
