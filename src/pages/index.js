@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
@@ -13,6 +13,8 @@ import WorkSamples from '../components/WorkSamples'
 import Work from '../components/Work'
 import ServicesWrapper from '../components/ServicesWrapper'
 import Service from '../components/Service'
+import Tab from '../components/Tab'
+import Tabs from '../components/Tabs'
 
 class Index extends React.Component {
   constructor(props) {
@@ -34,11 +36,7 @@ class Index extends React.Component {
     return (
       <div>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
-        {/* <Waypoint
-          onEnter={this._handleWaypointEnter}
-          onLeave={this._handleWaypointLeave}
-        >
-        </Waypoint> */}
+        
         <section className="home-main">
           <div className="wrapper">
             <div className="hero">
@@ -60,31 +58,35 @@ class Index extends React.Component {
 
         <section className="services">
           <header>
-            <h2>What we do</h2>
-            <p>Your company has a story to tell. We can help you build a successful strategy from start to finish to share it as effectively as possible. Check out some of our services below to learn more about how we can work together to create something awesome!</p>
+            <h2>Your company has a story to tell. We help you build a successful strategy from start to finish to share it as effectively as possible.</h2>
           </header>
-          <ServicesWrapper>
-            <Service
-              label="Website, mobile, & user experience design"
-              desc="The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more – there’s an entire world of internet advertising opportunities to explore. We specialize in internet marketing strategy, online advertising, web marketing and conversion."
-              href="web"
-            />
-            <Service
-              label="Digital product design & development"
-              desc="The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more – there’s an entire world of internet advertising opportunities to explore. We specialize in internet marketing strategy, online advertising, web marketing and conversion."
-              href="digital"
-            />
-            <Service
-              label="Brand strategy, identity, & digital marketing"
-              desc="The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more – there’s an entire world of internet advertising opportunities to explore. We specialize in internet marketing strategy, online advertising, web marketing and conversion."
-              href="marketing"
-            />
-            <Service
-              label="Let's create something new together"
-              desc="The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more – there’s an entire world of internet advertising opportunities to explore. We specialize in internet marketing strategy, online advertising, web marketing and conversion."
-              href="marketing"
-            />
-          </ServicesWrapper>
+
+          <Tabs className="services-tabs">
+            <Tab
+              linkClassName={'link-class-0'}
+              linkText="Tab 1"
+            >
+              <p>content 0</p>
+            </Tab>
+            <Tab
+              linkClassName={'link-class-1'}
+              linkText="Tab 2"
+            >
+              <p>content 1</p>
+            </Tab>
+            <Tab
+              linkClassName={'link-class-2'}
+              linkText="Tab 3"
+            >
+              <p>content 2</p>
+            </Tab>
+            <Tab
+              linkClassName={'link-class-3'}
+              linkText="Tab 4"
+            >
+              <p>content 3</p>
+            </Tab>
+          </Tabs>
         </section>
 
         <section className="about">
@@ -138,7 +140,32 @@ class Index extends React.Component {
           </div>
         </section>
 
-        <WorkSamples>
+        <section className="services">
+          <ServicesWrapper>
+            <Service
+              label="Website, mobile, & user experience design"
+              desc="The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more – there’s an entire world of internet advertising opportunities to explore. We specialize in internet marketing strategy, online advertising, web marketing and conversion."
+              href="web"
+            />
+            <Service
+              label="Digital product design & development"
+              desc="The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more – there’s an entire world of internet advertising opportunities to explore. We specialize in internet marketing strategy, online advertising, web marketing and conversion."
+              href="digital"
+            />
+            <Service
+              label="Brand strategy, identity, & digital marketing"
+              desc="The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more – there’s an entire world of internet advertising opportunities to explore. We specialize in internet marketing strategy, online advertising, web marketing and conversion."
+              href="marketing"
+            />
+            <Service
+              label="Let's create something new together"
+              desc="The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more – there’s an entire world of internet advertising opportunities to explore. We specialize in internet marketing strategy, online advertising, web marketing and conversion."
+              href="marketing"
+            />
+          </ServicesWrapper>
+        </section>
+
+        {/*<WorkSamples>
           <Work
             category="ui/ux design"
             title="J&J Financial"
@@ -164,13 +191,14 @@ class Index extends React.Component {
             thumbnail={'jjf/1.jpg'}
           />
         </WorkSamples>
+        */}
       </div> // React containment div
     )
   }
 }
 
 Index.propTypes = {
-  route: React.PropTypes.object,
+  route: PropTypes.object,
 }
 
 export default Index

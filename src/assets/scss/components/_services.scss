@@ -3,22 +3,14 @@
 
   header {
     margin: 0 auto;
-    width: 65%;
+    width: 70%;
     margin-bottom: em(100px);
 
     h2 {
-      font-family: $sansSerif;
-      color: $brinkpink;
-      font-size: em(10px);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 1em;
-    }
-
-    p {
       color: $bluegem;
-      font-weight: 800;
-      font-size: em(22px);
+      font-size: em(40px);
+      margin-bottom: 0;
+      line-height: 1.4;
     }
   }
 }

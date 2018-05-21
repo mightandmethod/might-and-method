@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import 'typeface-work-sans'
 import 'typeface-butler'
 import '../assets/scss/main.scss'
@@ -40,7 +40,7 @@ class Template extends React.Component {
 }
 
 Template.propTypes = {
-  children: React.PropTypes.func
+  children: PropTypes.func
 }
 
 export default Template
