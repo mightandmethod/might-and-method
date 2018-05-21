@@ -15,6 +15,7 @@
     "lodash": "^4.17.10",
     "react-emergence": "^1.0.1",
     "react-helmet": "^5.2.0",
+    "react-scroll": "^1.7.9",
     "react-scroll-to-element": "^0.2.0",
     "react-scrollspy": "^3.3.5",
     "react-tabs": "^2.2.2",

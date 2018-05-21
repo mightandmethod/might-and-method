@@ -3,15 +3,16 @@ import React, {PropTypes} from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Waypoint from 'react-waypoint'
-import {Emerge} from 'react-emergence'
+import { Emerge } from 'react-emergence'
+import { animateScroll as scroll, scroller } from 'react-scroll'
 
 // Assets
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faArrowDown from '@fortawesome/fontawesome-free-solid/faArrowDown'
 import faLongArrowAltRight from '@fortawesome/fontawesome-free-solid/faLongArrowAltRight'
-import scroll from '../assets/images/scroll.svg'
+import scrollSvg from '../assets/images/scroll.svg'
 import discoverDrawing from '../assets/images/discover-story.svg'
 import brandDrawing from '../assets/images/build-brand.svg'
 import onlineDrawing from '../assets/images/craft-online-presence.svg'
@@ -31,6 +32,15 @@ class Index extends React.Component {
     this.state = {
       stickyNav: false
     }
+  }
+
+  scrollTo(elem) {
+    scroller.scrollTo(elem, {
+      duration: 1000,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+      offset: -180
+    })
   }
 
   _handleWaypointEnter= () => {
@@ -64,16 +74,16 @@ class Index extends React.Component {
                   size="large"
                   text="Let's get started"
                 />
-                <a href="#work">
+                <a href="javascript:(0);" onClick={() => this.scrollTo('services-section')}>
                   Learn more about us <FontAwesomeIcon icon={faArrowDown} />
                 </a>
               </div> 
             </div>
-            <img src={scroll} alt="Scroll for more" className="scroll" />
+            <img src={scrollSvg} alt="Scroll for more" className="scroll" />
           </div>
         </section>
 
-        <section className="services">         
+        <section className="services" name="services-section">
           <header>
             <Emerge>
               <h2>Your company has a story to tell. We help you build a successful strategy from start to finish to share it as effectively as possible.</h2>  
@@ -223,9 +233,9 @@ class Index extends React.Component {
 
             <Emerge>
               <div style={{ width: '100%', textAlign: 'center' }}>
-                <Link to="/services">
-                  See how we can help your company <FontAwesomeIcon icon={faArrowDown} />
-                </Link>
+                <a href="javascript:(0);" onClick={() => this.scrollTo('work-section')}>
+                  See what we've created <FontAwesomeIcon icon={faArrowDown} />
+                </a>
               </div>
             </Emerge>
           </div>
@@ -256,7 +266,7 @@ class Index extends React.Component {
           </ServicesWrapper>
         </section> */}
 
-        <section className="work">
+        <section className="work" name="work-section">
           <header>
             <h2>Recent Partnerships</h2>
             <Link to="/work">See more of our work <FontAwesomeIcon icon={faLongArrowAltRight} /></Link>
