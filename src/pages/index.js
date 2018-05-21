@@ -173,7 +173,7 @@ class Index extends React.Component {
 
         <section className="about">
           <ButtonLink
-            href="/contact"
+            href="/work"
             size="small"
             type="primary"
             text="Explore our work"
