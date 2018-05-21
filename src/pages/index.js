@@ -10,6 +10,7 @@ import {Emerge} from 'react-emergence'
 // Assets
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faArrowDown from '@fortawesome/fontawesome-free-solid/faArrowDown'
+import faLongArrowAltRight from '@fortawesome/fontawesome-free-solid/faLongArrowAltRight'
 import scroll from '../assets/images/scroll.svg'
 import discoverDrawing from '../assets/images/discover-story.svg'
 import brandDrawing from '../assets/images/build-brand.svg'
@@ -213,7 +214,7 @@ class Index extends React.Component {
                 </Emerge>
                 <Emerge>
                 <div>
-                  <h3>Build the dang thing&trade;</h3>
+                  <h3>Build the dang thing<span>&trade;</span></h3>
                   <p>We define a clear process, identify specific needs for execution and set a step-by-step timeline. Those sound a little rigid, we know, but we also know that steps in a process can pivot, needs can change and key dates move. We execute because we adapt. We're limber folks—for the most part.</p>
                 </div>
                 </Emerge>
@@ -228,7 +229,7 @@ class Index extends React.Component {
           </div>
         </section>
 
-        <section className="services">
+        {/* <section className="services">
           <ServicesWrapper>
             <Service
               label="Website, mobile, & user experience design"
@@ -251,35 +252,46 @@ class Index extends React.Component {
               href="marketing"
             />
           </ServicesWrapper>
-        </section>
+        </section> */}
 
-        {/*<WorkSamples>
-          <Work
-            category="ui/ux design"
-            title="J&J Financial"
-            slug="jj-financial"
-            thumbnail={'jjf/1.jpg'}
-          />
-          <Work
-            category="ui/ux design"
-            title="J&J Financial"
-            slug="jj-financial"
-            thumbnail={'jjf/1.jpg'}
-          />
-          <Work
-            category="ui/ux design"
-            title="J&J Financial"
-            slug="jj-financial"
-            thumbnail={'jjf/1.jpg'}
-          />
-          <Work
-            category="ui/ux design"
-            title="J&J Financial"
-            slug="jj-financial"
-            thumbnail={'jjf/1.jpg'}
-          />
-        </WorkSamples>
-        */}
+        <section className="work">
+          <header>
+            <h2>Recent Partnerships</h2>
+            <Link to="/work">See more of our work <FontAwesomeIcon icon={faLongArrowAltRight} /></Link>
+          </header>
+
+          <WorkSamples>
+            <Work
+              category="ui/ux design"
+              title="J&J Financial"
+              slug="jj-financial"
+              thumbnail={'1.png'}
+            />
+            <Work
+              category="mobile web design"
+              title="Pilot AutoSystems"
+              slug="pilot"
+              thumbnail={'2.png'}
+            />
+            <Work
+              category="web app"
+              title="Asyncy"
+              slug="asyncy"
+              thumbnail={'3.png'}
+            />
+            <Work
+              category="ui/ux design"
+              title="J&J Financial"
+              slug="jj-financial"
+              thumbnail={'4.png'}
+            />
+            <div style={{
+              width: '1px',
+              minWidth: '1px',
+              maxWidth: '1px'
+            }}>&nbsp;</div>
+          </WorkSamples>
+        </section>
       </div> // React containment div
     )
   }

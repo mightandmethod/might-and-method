@@ -43,11 +43,11 @@ body {
 }
 
 .hero {
-  width: 70%;
+  width: 75%;
   margin: auto;
 
   h1 {
-    font-size: em(98px);
+    font-size: em(105px);
     color: $white;
     font-weight: 400;
     line-height: 1;
@@ -183,7 +183,7 @@ body {
       color: $white;
 
       svg {
-        animation: arrowSlide 0.5s;
+        animation: arrowSlide 0.3s;
       }
     }
 
@@ -216,6 +216,10 @@ body {
         color: $brinkpink;
         font-weight: 800;
         font-size: em(16px);
+
+        span {
+          font-family: sans-serif; // &trade; wasn't picking up $sansSerif definition for some reason
+        }
       }
 
       p {

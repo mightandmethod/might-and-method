@@ -1,0 +1,140 @@
+.work {
+  margin: em(100px) auto 0;
+  background-color: $whiteish;
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+
+    h2 {
+      font-family: $sansSerif;
+      color: $bluegem;
+      font-size: em(18px);
+      margin: 0;
+    }
+
+    a {
+      color: $brinkpink;
+      font-size: em(16px);
+      transition: all 0.25s ease-out;
+
+      svg {
+        margin-left: 0.5em;
+        transition: transform 0.25s ease-out;
+      }
+    
+      &:hover {
+        color: $bluegem;
+        transform: translateX(3px);
+
+        svg {
+          transform: translateX(3px);
+        }
+      }
+    }
+  }
+}
+
+.work-samples {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: em(50px) em(100px) em(75px);
+  width: auto;
+  overflow-x: scroll;
+  overflow-y: visible;
+
+  > div {
+    display: flex;
+    width: 45%;
+    min-width: 600px;
+    min-height: 400px;
+
+    & + div {
+      margin-left: 3em;
+    }
+  }
+
+  .work-sample {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+
+    h6 {
+      margin: em(35px) 0 em(15px);
+      font-family: $sansSerif;
+      font-size: em(10px);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ABAAB3;
+      font-weight: normal;
+    }
+
+    h3 {
+      margin: 0;
+      font-family: $sansSerif;
+      font-size: em(20px);
+      color: $bluegem-darker;
+      font-weight: 800;
+    }
+
+    &__image {
+      position: relative;
+      line-height: 0; // hacky fix to prevent extra height
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      transition: transform 0.25s ease-out;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        opacity: 0;
+        transition: opacity 0.25s ease-out;
+      }
+
+      img {
+        display: inline-flex;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .overlay {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0,0,0,0.75);
+        transition: opacity 0.25s ease-out;
+      }
+
+      .button-link {
+        margin: auto;
+      }
+    }
+
+    &:hover {
+      .work-sample__image {
+        transform: translateY(-3px);
+
+        &:after {
+          opacity: 1;
+        }
+      }
+      .overlay {
+        opacity: 1;
+      }
+    }
+  }
+}
