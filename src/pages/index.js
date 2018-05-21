@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-// import Waypoint from 'react-waypoint'
+import Waypoint from 'react-waypoint'
 
 // Assets
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
@@ -16,6 +16,7 @@ import onlineDrawing from '../assets/images/craft-online-presence.svg'
 import delightDrawing from '../assets/images/delight-customers.svg'
 
 // Components
+import Nav from '../components/Nav'
 import ButtonLink from '../components/ButtonLink'
 import WorkSamples from '../components/WorkSamples'
 import Work from '../components/Work'
@@ -25,9 +26,6 @@ import Service from '../components/Service'
 class Index extends React.Component {
   constructor(props) {
     super(props);
-    this.props = {
-      
-    };
     this.state = {
       stickyNav: false
     }
@@ -42,10 +40,15 @@ class Index extends React.Component {
   }
 
   render() {
-    console.log("this.props", this.props);
     return (
       <div>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
+        <Waypoint
+            onEnter={this._handleWaypointEnter}
+            onLeave={this._handleWaypointLeave}
+          >
+          </Waypoint>
+        <Nav sticky={this.state.stickyNav} />
         
         <section className="home-main">
           <div className="wrapper">

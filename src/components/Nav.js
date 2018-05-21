@@ -4,8 +4,8 @@ import Link from 'gatsby-link'
 import logo from '../assets/images/logo-red.svg'
 
 const Nav = (props) => (
-  <nav id="nav" className={props.sticky ? 'alt' : ''}>
-    <Link to="/">
+  <nav id="nav" className={props.sticky ? 'sticky' : ''}>
+    <Link to="/" style={{ lineHeight: 1 }}>
       <img
         src={logo}
         alt="Might & Method"

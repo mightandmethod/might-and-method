@@ -4,9 +4,11 @@ nav {
   position: absolute;
   width: 100%;
   top: 0;
-  padding: 50px;
+  padding: em(50px);
   background: none;
   vertical-align: middle;
+  transition: all 0.35s ease-in-out;
+  align-items: center;
 
   ul {
     padding: 0;
@@ -70,6 +72,37 @@ nav {
             opacity: 1;
           }
         }
+      }
+    }
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    background: $white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: em(25px) em(50px);
+
+    ul li a {
+      color: $bluegem;
+
+      &:after {
+        border-color: $bluegem;
+      }
+    }
+
+    ul li:last-child a {
+      background: $brinkpink;
+      color: $white;
+
+      &:hover {
+        color: $white;
+        border-color: darken($brinkpink, 10%);
+      }
+
+      &:after {
+        background: darken($brinkpink, 10%);
       }
     }
   }

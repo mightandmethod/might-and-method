@@ -3,7 +3,6 @@ import 'typeface-work-sans'
 import 'typeface-butler'
 import '../assets/scss/main.scss'
 
-import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 
 class Template extends React.Component {
@@ -31,7 +30,6 @@ class Template extends React.Component {
 
     return (
       <div className={`body ${this.state.loading}`}>
-          <Nav />
           {children()}
           <Footer />
       </div>
