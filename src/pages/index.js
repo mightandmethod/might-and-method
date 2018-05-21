@@ -1,24 +1,33 @@
+//. Core
 import React, {PropTypes} from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 // import Waypoint from 'react-waypoint'
+
+// Assets
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faArrowDown from '@fortawesome/fontawesome-free-solid/faArrowDown'
-
 import scroll from '../assets/images/scroll.svg'
+import discoverDrawing from '../assets/images/discover-story.svg'
+import brandDrawing from '../assets/images/build-brand.svg'
+import onlineDrawing from '../assets/images/craft-online-presence.svg'
+import delightDrawing from '../assets/images/delight-customers.svg'
 
+// Components
 import ButtonLink from '../components/ButtonLink'
 import WorkSamples from '../components/WorkSamples'
 import Work from '../components/Work'
 import ServicesWrapper from '../components/ServicesWrapper'
 import Service from '../components/Service'
-import Tab from '../components/Tab'
-import Tabs from '../components/Tabs'
 
 class Index extends React.Component {
   constructor(props) {
     super(props);
+    this.props = {
+      
+    };
     this.state = {
       stickyNav: false
     }
@@ -33,6 +42,7 @@ class Index extends React.Component {
   }
 
   render() {
+    console.log("this.props", this.props);
     return (
       <div>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
@@ -61,31 +71,83 @@ class Index extends React.Component {
             <h2>Your company has a story to tell. We help you build a successful strategy from start to finish to share it as effectively as possible.</h2>
           </header>
 
-          <Tabs className="services-tabs">
-            <Tab
-              linkClassName={'link-class-0'}
-              linkText="Tab 1"
-            >
-              <p>content 0</p>
-            </Tab>
-            <Tab
-              linkClassName={'link-class-1'}
-              linkText="Tab 2"
-            >
-              <p>content 1</p>
-            </Tab>
-            <Tab
-              linkClassName={'link-class-2'}
-              linkText="Tab 3"
-            >
-              <p>content 2</p>
-            </Tab>
-            <Tab
-              linkClassName={'link-class-3'}
-              linkText="Tab 4"
-            >
-              <p>content 3</p>
-            </Tab>
+          <Tabs
+            className="service-tabs"
+            selectedTabClassName="service-tabs__tab--selected"
+            // forceRenderTabPanel
+            selectedTabPanelClassName="service-tabs__panel--selected"
+          >
+            <TabList className="service-tabs__tab-list">
+              <Tab className="service-tabs__tab">Discover your story</Tab>
+              <Tab className="service-tabs__tab">Build your brand</Tab>
+              <Tab className="service-tabs__tab">Craft your online presence</Tab>
+              <Tab className="service-tabs__tab">Delight your customers</Tab>
+            </TabList>
+
+            <TabPanel className="service-tabs__panel">
+              <div>
+                <div>
+                  <h3>Here's a title</h3>
+                  <p>Your company has a story to tell. We can help you build a successful strategy from start to finish to share it as effectively as possible. Check out some of our services below to learn more about how we can work together to create something awesome!</p>
+                  <ButtonLink
+                    href="/contact"
+                    type="secondary"
+                    text="Let's get started"
+                  />
+                </div>
+                <div>
+                  <img src={discoverDrawing} className="drawing" />
+                </div>
+              </div>
+            </TabPanel>
+            <TabPanel className="service-tabs__panel">
+              <div>
+                <div>
+                  <h3>Here's a second title</h3>
+                  <p>Your company has a story to tell. We can help you build a successful strategy from start to finish to share it as effectively as possible. Check out some of our services below to learn more about how we can work together to create something awesome!</p>
+                  <ButtonLink
+                    href="/contact"
+                    type="secondary"
+                    text="Let's get started"
+                  />
+                </div>
+                <div>
+                  <img src={brandDrawing} className="drawing" />
+                </div>
+              </div>
+            </TabPanel>
+            <TabPanel className="service-tabs__panel">
+              <div>
+                <div>
+                  <h3>Here's a third title</h3>
+                  <p>Your company has a story to tell. We can help you build a successful strategy from start to finish to share it as effectively as possible. Check out some of our services below to learn more about how we can work together to create something awesome!</p>
+                  <ButtonLink
+                    href="/contact"
+                    type="secondary"
+                    text="Let's get started"
+                  />
+                </div>
+                <div>
+                  <img src={onlineDrawing} className="drawing" />
+                </div>
+              </div>
+            </TabPanel>
+            <TabPanel className="service-tabs__panel">
+              <div>
+                <div>
+                  <h3>Titles are fun and cool and stuff</h3>
+                  <p>Your company has a story to tell. We can help you build a successful strategy from start to finish to share it as effectively as possible. Check out some of our services below to learn more about how we can work together to create something awesome!</p>
+                  <ButtonLink
+                    href="/contact"
+                    type="secondary"
+                    text="Let's get started"
+                  />
+                </div>
+                <div>
+                  <img src={delightDrawing} className="drawing" />
+                </div>
+              </div>
+            </TabPanel>
           </Tabs>
         </section>
 
