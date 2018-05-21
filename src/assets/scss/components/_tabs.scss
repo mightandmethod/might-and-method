@@ -1,0 +1,85 @@
+.service-tabs {
+  &__tab-list {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      display: inline-flex;
+      padding: 0.25em 0.75em;
+      color: #999;
+      border-bottom: 3px solid transparent;
+
+      transition: all 0.25s ease-out;
+
+      &:hover {
+        color: darken(#999, 25%);
+        cursor: pointer;
+      }
+
+      &.service-tabs__tab--selected {
+        color: $brinkpink;
+        border-bottom-color: $brinkpink;
+      }
+    }
+  }
+
+  &__panel {
+    width: 100%;
+    background: $white;
+
+    > div {
+      display: flex;
+      flex-direction: row;
+      width: 70%;
+      margin: auto;
+      justify-content: space-between;
+      align-items: center;
+      min-height: em(575px);
+
+      div:first-child {
+        width: 43%;
+        opacity: 0;
+
+        h3 {
+          color: $brinkpink;
+          font-family: $sansSerif;
+          font-weight: 800;
+          font-size: em(18px);
+          margin-bottom: em(15px);
+        }
+
+        p {
+          font-size: em(18px);
+          color: $bluegem;
+          margin-bottom: em(25px);
+        }
+      }
+
+      div:last-child {
+        width: 50%;
+        opacity: 0;
+        text-align: right;
+
+        img.drawing {
+          max-width: 100%;
+          height: auto;
+          max-height: 450px;
+        }
+      }
+    }
+
+    &--selected {
+      > div {
+        div:first-child {
+          animation: fadeAndSlideIn 0.5s ease-in-out 0.1s forwards;
+        }
+
+        div:last-child {
+          animation: fadeAndSlideIn 0.5s ease-in-out 0.3s forwards
+        }
+      }
+    }
+  }
+}
