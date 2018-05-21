@@ -13,6 +13,7 @@
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sass": "^1.0.26",
     "lodash": "^4.17.10",
+    "react-emergence": "^1.0.1",
     "react-helmet": "^5.2.0",
     "react-scroll-to-element": "^0.2.0",
     "react-scrollspy": "^3.3.5",

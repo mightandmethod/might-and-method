@@ -2615,6 +2615,10 @@ elliptic@^6.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
+emergence.js@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/emergence.js/-/emergence.js-1.1.2.tgz#f03871d6dd80edadb9afe17999d3c95030c11494"
+
 emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
@@ -6895,6 +6899,15 @@ react-dom@^15.6.0:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
+react-emergence@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-emergence/-/react-emergence-1.0.1.tgz#a9a19a43170bf793efc7af3b7dae1523c2689a56"
+  dependencies:
+    classnames "^2.2.5"
+    emergence.js "^1.1.2"
+    prop-types "^15.6.0"
+    react "^16.0.0"
+
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
@@ -6994,7 +7007,7 @@ react@^15.6.0:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-react@^16.1.1:
+react@^16.0.0, react@^16.1.1:
   version "16.3.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
   dependencies:
