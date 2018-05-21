@@ -3,9 +3,9 @@ import React, {PropTypes} from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
 import Waypoint from 'react-waypoint'
-import { Emerge } from 'react-emergence'
+import {Emerge} from 'react-emergence'
 
 // Assets
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
@@ -44,11 +44,13 @@ class Index extends React.Component {
     return (
       <div>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
+        
         <Waypoint
             onEnter={this._handleWaypointEnter}
             onLeave={this._handleWaypointLeave}
           >
-          </Waypoint>
+        </Waypoint>
+
         <Nav sticky={this.state.stickyNav} />
         
         <section className="home-main">

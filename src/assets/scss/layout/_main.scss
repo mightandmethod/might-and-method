@@ -1,3 +1,4 @@
+// Emergence.js transitions
 *[data-emergence=hidden] {
   transform: translateY(1em);
   opacity: 0;
@@ -8,13 +9,13 @@
   opacity: 1;
   transition: all 0.4s ease-out;
 }
-
 .grid .row {
   div:last-child[data-emergence=visible] {
     transition-delay: 0.3s;
   }
 }
 
+// Main styles
 body {
   background-color: $whiteish;
 }
@@ -27,6 +28,20 @@ body {
   background: linear-gradient(135deg, $bluegem 30%, darken($bluegem, 35%));
 }
 
+.is-loading {
+  .hero {
+    h1 {
+      opacity: 0;
+      transform: translateX(0.25em);
+    }
+
+    &__links {
+      opacity: 0;
+      transform: translateX(1em);
+    }
+  }
+}
+
 .hero {
   width: 70%;
   margin: auto;
@@ -37,6 +52,9 @@ body {
     font-weight: 400;
     line-height: 1;
     margin-bottom: 0.5em;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.35s ease-out 0.25s;
 
     span {
       display: block;
@@ -49,6 +67,9 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.35s ease-out 0.5s;
 
     a:not(.button-link) {
       margin-left: 2em;

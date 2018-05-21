@@ -17,7 +17,7 @@ class Template extends React.Component {
   componentDidMount () {
     this.timeoutId = setTimeout(() => {
         this.setState({loading: ''});
-    }, 100);
+    }, 500);
   }
 
   componentWillUnmount () {
@@ -41,7 +41,7 @@ class Template extends React.Component {
         >
           {children()}
         </EmergeContainer>
-          <Footer />
+        <Footer />
       </div>
     )
   }
