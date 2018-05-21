@@ -38,8 +38,15 @@
   }
 
   &.secondary {
-    background-color: $bluegem;
-    color: $white;
+    background-color: transparent;
+    color: $bluegem;
+    border: 2px solid $bluegem;
+    border-radius: 2px;
+    font-weight: normal;
+
+    &:after {
+      display: none;
+    }
   }
 
   &.small {
@@ -49,8 +56,16 @@
   }
 
   &.regular {
-    padding: 0.5em 1em;
-    font-size: em(18px);
+    padding: 1em 1.25em;
+    font-size: em(16px);
+
+    transition: all 0.25s ease-out;
+
+    &:hover {
+      transform: none;
+      background: $bluegem;
+      color: $white;
+    }
   }
 
   &.large {
