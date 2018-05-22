@@ -2,12 +2,15 @@
   0% {
     transform: translateY(0)
   }
+
   50% {
     transform: translateY(-10px)
   }
+
   50.01% {
     transform: translateY(-10px)
   }
+
   to {
     transform: translateY(0)
   }
@@ -17,12 +20,15 @@
   0% {
     transform: translateY(0)
   }
+
   50% {
     transform: translateY(15px)
   }
+
   50.01% {
     transform: translateY(-15px)
   }
+
   to {
     transform: translateY(0)
   }
@@ -30,11 +36,12 @@
 
 @keyframes fadeAndSlideIn {
   0% {
-    transform: translateY(40px);
     opacity: 0;
+    transform: translateY(40px);
   }
+
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }

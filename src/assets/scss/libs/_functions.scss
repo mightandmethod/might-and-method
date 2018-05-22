@@ -38,13 +38,17 @@ $base-font-size: $baseFontSize;
   @each $value in $values {
     @if $value == 0 or type-of($value) != "number" {
       $result: append($result, $value);
-    } @else {
+    }
+
+    @else {
       $unit: unit($value);
       $value: parse-int($value);
 
       @if $unit == "px" {
         $result: append($result, add-em-unit($value / ($base-font-size * $em-base)));
-      } @else if $unit == "em" {
+      }
+
+      @else if $unit == "em" {
         $result: append($result, add-em-unit($value / $em-base));
       }
     }
@@ -57,7 +61,9 @@ $base-font-size: $baseFontSize;
    */
   @if length($result) == 1 {
     @return nth($result, 1);
-  } @else {
+  }
+
+  @else {
     @return $result;
   }
 }

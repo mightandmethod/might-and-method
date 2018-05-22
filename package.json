@@ -12,6 +12,7 @@
     "gatsby-plugin-favicon": "^2.1.1",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sass": "^1.0.26",
+    "global": "^4.3.2",
     "include-media": "^1.4.9",
     "lodash": "^4.17.10",
     "react-emergence": "^1.0.1",
@@ -32,9 +33,15 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:css": "stylelint \"./src/assets/scss/**/*.scss\""
   },
   "devDependencies": {
-    "prettier": "^1.12.0"
+    "prettier": "^1.12.0",
+    "stylelint": "^9.2.1",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^0.8.1",
+    "stylelint-scss": "^3.1.0"
   }
 }

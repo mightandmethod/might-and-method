@@ -5,27 +5,27 @@
   height: auto;
 
   .footer__sidebar {
+    background: #251f4d;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 0 2em 2em;
     width: 20%;
-    background: #251F4D;
-    justify-content: space-between;
 
     div:first-child {
       margin-top: 100px;
 
       h1 {
-        font-size: em(65px);
         color: $brinkpink;
+        font-size: em(65px);
         margin-bottom: 0.32em;
       }
     }
 
     .copyright {
       p {
+        color: #5e5980;
         font-size: em(11px);
-        color: #5E5980;
         font-weight: 800;
         margin: 0;
 
@@ -41,8 +41,8 @@
   }
 
   .footer__content {
+    background-color: #120f26;
     width: 80%;
-    background-color: #120F26;
   }
 
   .content__wrap {
@@ -63,20 +63,20 @@
           position: relative;
 
           &:before {
+            border-bottom: 2px solid #5e5980;
+            bottom: 0;
             content: "";
             display: block;
             height: 2px;
-            width: 100%;
-            border-bottom: 2px solid #5E5980;
             position: absolute;
-            bottom: 0;
+            width: 100%;
           }
 
           &:after {
+            border-bottom: 2px solid $white;
             content: "";
             display: block;
             height: 2px;
-            border-bottom: 2px solid $white;
             opacity: 0;
             transform: translateX(-100%);
             transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
@@ -103,16 +103,16 @@
   }
 
   a {
-    display: inline-block;
     color: $white;
-    position: relative;
+    display: inline-block;
     overflow: hidden;
+    position: relative;
 
     &:after {
+      border-bottom: 2px solid $white;
       content: "";
       display: block;
       height: 2px;
-      border-bottom: 2px solid $white;
       opacity: 0;
       transform: translateX(-100%);
       transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
