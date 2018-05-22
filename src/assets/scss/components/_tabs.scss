@@ -1,16 +1,15 @@
 .service-tabs {
   &__tab-list {
-    width: 70%;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
+    width: 70%;
 
     li {
+      border-bottom: 3px solid transparent;
+      color: #999;
       display: inline-flex;
       padding: 0.25em 0.75em;
-      color: #999;
-      border-bottom: 3px solid transparent;
-
       transition: all 0.25s ease-out;
 
       &:hover {
@@ -19,53 +18,53 @@
       }
 
       &.service-tabs__tab--selected {
-        color: $brinkpink;
         border-bottom-color: $brinkpink;
+        color: $brinkpink;
       }
     }
   }
 
   &__panel {
-    width: 100%;
     background: $white;
+    width: 100%;
 
     > div {
+      align-items: center;
       display: flex;
       flex-direction: row;
-      width: 70%;
-      margin: auto;
       justify-content: space-between;
-      align-items: center;
+      margin: auto;
       min-height: em(575px);
+      width: 70%;
 
       div:first-child {
-        width: 43%;
         opacity: 0;
+        width: 43%;
 
         h3 {
           color: $brinkpink;
           font-family: $sansSerif;
-          font-weight: 800;
           font-size: em(18px);
+          font-weight: 800;
           margin-bottom: em(15px);
         }
 
         p {
-          font-size: em(18px);
           color: $bluegem;
+          font-size: em(18px);
           margin-bottom: em(25px);
         }
       }
 
       div:last-child {
-        width: 50%;
         opacity: 0;
         text-align: right;
+        width: 50%;
 
         img.drawing {
-          max-width: 100%;
           height: auto;
           max-height: 450px;
+          max-width: 100%;
         }
       }
     }

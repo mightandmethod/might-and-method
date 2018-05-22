@@ -6,21 +6,21 @@
 }
 
 nav {
+  align-items: center;
+  background: none;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  width: 100%;
-  top: 0;
   padding: em(50px);
-  background: none;
-  vertical-align: middle;
+  position: absolute;
+  top: 0;
   transition: all 0.5s ease-in-out;
-  align-items: center;
+  vertical-align: middle;
+  width: 100%;
 
   ul {
-    padding: 0;
-    margin: 0;
     list-style: none;
+    margin: 0;
+    padding: 0;
 
     li {
       display: inline-block;
@@ -31,16 +31,16 @@ nav {
       }
 
       a {
+        color: #fff;
         display: block;
         font-size: 16px;
-        color: #fff;
         overflow: hidden;
 
         &:after {
+          border-bottom: 2px solid $white;
           content: "";
           display: block;
           height: 2px;
-          border-bottom: 2px solid $white;
           opacity: 0;
           transform: translateX(-100%);
           transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
@@ -57,18 +57,18 @@ nav {
         border-radius: 2px;
         color: $brinkpink;
         padding: 0.25em 1em;
-        transition: color 0.25s;
         position: relative;
+        transition: color 0.25s;
         z-index: 2;
 
         &:after {
-          height: 100%;
-          width: 100%;
           background: $brinkpink;
-          position: absolute;
           border: 0;
-          top: 0;
+          height: 100%;
           left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
           z-index: -1;
         }
 
@@ -84,12 +84,12 @@ nav {
   }
 
   &.sticky {
-    position: fixed;
-    top: 0;
-    z-index: 99;
     background: $white;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     padding: em(25px) em(50px);
+    position: fixed;
+    top: 0;
+    z-index: 99;
 
     ul li a {
       color: $bluegem;
@@ -104,8 +104,8 @@ nav {
       color: $white;
 
       &:hover {
-        color: $white;
         border-color: darken($brinkpink, 10%);
+        color: $white;
       }
 
       &:after {

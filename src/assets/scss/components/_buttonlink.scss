@@ -1,25 +1,24 @@
 .button-link {
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
   border-radius: 2px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: inline-block;
   font-weight: 800;
   line-height: 1;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-
+  position: relative;
+  text-decoration: none;
   transition: transform ease-out 0.25s, background-color 0.25s ease-out;
 
   &:after {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     content: "";
-    position: absolute;
     display: block;
-    width: 100%;
     height: 100%;
-    top: 0;
     left: 0;
     opacity: 0;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
     transition: opacity 0.25s ease-out;
+    width: 100%;
   }
 
   &:hover {
@@ -41,11 +40,11 @@
 
   &.secondary {
     background-color: transparent;
-    color: $bluegem;
     border: 2px solid $bluegem;
     border-radius: 2px;
-    font-weight: normal;
     box-shadow: none;
+    color: $bluegem;
+    font-weight: normal;
 
     &:after {
       display: none;
@@ -53,27 +52,26 @@
   }
 
   &.small {
-    padding: 1.15em 1.5em;
     font-size: em(14px);
     font-weight: normal;
+    padding: 1.15em 1.5em;
   }
 
   &.regular {
-    padding: 1em 1.25em;
     font-size: em(16px);
-
+    padding: 1em 1.25em;
     transition: all 0.25s ease-out;
 
     &:hover {
-      transform: none;
       background: $bluegem;
       color: $white;
+      transform: none;
     }
   }
 
   &.large {
-    padding: 1.25em 1.75em;
     font-size: em(20px);
+    padding: 1.25em 1.75em;
   }
 
   &.has-arrow {

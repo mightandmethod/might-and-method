@@ -1,14 +1,16 @@
 // Emergence.js transitions
 *[data-emergence=hidden] {
-  transform: translateY(1em);
   opacity: 0;
+  transform: translateY(1em);
   transition: all 0.4s ease-out;
 }
+
 *[data-emergence=visible] {
-  transform: translateY(0);
   opacity: 1;
+  transform: translateY(0);
   transition: all 0.4s ease-out;
 }
+
 .grid .row {
   div:last-child[data-emergence=visible] {
     transition-delay: 0.3s;
@@ -21,11 +23,11 @@ body {
 }
 
 .home-main {
+  background: darken($bluegem, 25%); /* fallback */
+  background: linear-gradient(135deg, $bluegem 30%, darken($bluegem, 35%));
   display: flex;
   height: 100vh;
   width: 100%;
-  background: darken($bluegem, 25%); /* fallback */
-  background: linear-gradient(135deg, $bluegem 30%, darken($bluegem, 35%));
 }
 
 .is-loading {
@@ -47,12 +49,12 @@ body {
 }
 
 .hero {
-  width: 75%;
   margin: auto;
+  width: 75%;
 
   h1 {
-    font-size: 7vw;
     color: $white;
+    font-size: 7vw;
     font-weight: 400;
     line-height: 1;
     margin-bottom: 0.5em;
@@ -77,26 +79,26 @@ body {
     }
 
     span.bold {
+      color: $brinkpink;
       display: block;
       font-weight: 900;
-      color: $brinkpink;
     }
   }
 
   &__links {
-    display: inline-flex;
     align-items: center;
+    display: inline-flex;
     justify-content: space-between;
     opacity: 1;
     transform: translateY(0);
     transition: all 0.35s ease-out 1.25s;
 
     a:not(.button-link) {
-      margin-left: 2em;
-      color: #9F96D6;
-      transition: color 0.25s ease-out;
-      overflow: hidden;
+      color: #9f96d6;
       line-height: 1;
+      margin-left: 2em;
+      overflow: hidden;
+      transition: color 0.25s ease-out;
 
       &:hover {
         color: $brinkpink;
@@ -107,26 +109,25 @@ body {
       }
 
       svg {
-        width: 0.65em !important;
         margin-left: 0.25em;
         position: relative;
         top: 1px;
+        width: 0.65em !important;
       }
     }
   }
 }
 
 .scroll {
-  position: absolute;
-  margin: 0 auto;
+  animation: 2s infinite ease-in-out 4s scrollBounce;
   bottom: 1.5em;
   left: 50%;
-  right: 50%;
+  margin: 0 auto;
   opacity: 0.4;
+  position: absolute;
+  right: 50%;
   transform: translateY(0);
-
   transition: opacity 1s ease-out 2.25s;
-  animation: 2s infinite ease-in-out 4s scrollBounce;
 }
 
 @media only screen and (max-width: 480px) {
@@ -137,38 +138,38 @@ body {
 
 // About Section
 .about {
-  position: relative;
   background: $bluegem-darker;
-  padding: em(100px) 0;
   display: flex;
   flex-direction: column;
+  padding: em(100px) 0;
+  position: relative;
 
   .button-link {
     display: flex;
-    width: auto;
     margin: 0 auto;
     top: calc(-100px - 23px);
+    width: auto;
   }
 
   .content {
-    width: 70%;
     margin: auto;
+    width: 70%;
   }
 
   header {
     margin-bottom: em(100px);
 
     h1 {
-      font-family: $sansSerif;
-      font-weight: 800;
-      font-size: em(18px);
       color: $white;
+      font-family: $sansSerif;
+      font-size: em(18px);
+      font-weight: 800;
       margin-bottom: em(15px);
     }
 
     p {
-      font-family: $serif;
       color: $brinkpink;
+      font-family: $serif;
       font-size: em(40px);
       font-weight: 900;
       line-height: 1.25;
@@ -180,27 +181,27 @@ body {
   }
 
   h2 {
-    font-family: $sansSerif;
-    font-weight: 800;
-    font-size: em(18px);
     color: $white;
+    font-family: $sansSerif;
+    font-size: em(18px);
+    font-weight: 800;
     margin-bottom: em(15px);
   }
 
   p {
+    color: #beb8e6;
     font-family: $sansSerif;
-    font-weight: 600;
     font-size: em(18px);
-    color: #BEB8E6;
+    font-weight: 600;
   }
 
   a:not(.button-link) {
-    overflow: hidden;
     color: $brinkpink;
-    transition: color 0.25s ease-out;
-    line-height: 1;
-    padding-bottom: 1px; // prevents clipping of descenders... hacky
     display: inline-block;
+    line-height: 1;
+    overflow: hidden;
+    padding-bottom: 1px; // prevents clipping of descenders... hacky
+    transition: color 0.25s ease-out;
 
     &:hover {
       color: $white;
@@ -211,10 +212,10 @@ body {
     }
 
     svg {
-      width: 0.65em !important;
       margin-left: 0.25em;
       position: relative;
       top: 1px;
+      width: 0.65em !important;
     }
   }
 
@@ -230,15 +231,15 @@ body {
     justify-content: space-between;
 
     div {
-      width: 47%;
       margin-bottom: em(35px);
+      width: 47%;
 
       h3 {
-        margin-bottom: em(12px);
-        font-family: $sansSerif;
         color: $brinkpink;
-        font-weight: 800;
+        font-family: $sansSerif;
         font-size: em(16px);
+        font-weight: 800;
+        margin-bottom: em(12px);
 
         span {
           font-family: sans-serif; // &trade; wasn't picking up $sansSerif definition for some reason
@@ -246,7 +247,7 @@ body {
       }
 
       p {
-        color: #BEB8E6;
+        color: #beb8e6;
         font-size: em(16px);
         font-weight: normal;
         line-height: 1.65;
