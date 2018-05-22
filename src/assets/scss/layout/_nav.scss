@@ -10,7 +10,7 @@ nav {
   background: none;
   display: flex;
   justify-content: space-between;
-  padding: em(25px);
+  padding: em(20px) em(30px);
   position: absolute;
   top: 0;
   transition: all 0.5s ease-in-out;
@@ -48,7 +48,6 @@ nav {
       width: em(35px);
       height: em(35px);
       list-style: none;
-      margin: -2em/2 0 0 -1.625em/2;
       padding: 0;
       transition: transform 0.5s cubic-bezier(.23,1,.32,1);
       transform: translateZ(0);
@@ -144,10 +143,14 @@ nav {
   &.sticky {
     background: $white;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    padding: em(25px) em(50px);
     position: fixed;
     top: 0;
     z-index: 99;
+    padding: em(20px) em(30px);
+
+    @include media(">=large") {
+      padding: em(25px) em(50px);
+    }
 
     ul li a {
       color: $bluegem;
