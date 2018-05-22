@@ -13,6 +13,7 @@
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sass": "^1.0.26",
     "global": "^4.3.2",
+    "include-media": "^1.4.9",
     "lodash": "^4.17.10",
     "react-emergence": "^1.0.1",
     "react-helmet": "^5.2.0",

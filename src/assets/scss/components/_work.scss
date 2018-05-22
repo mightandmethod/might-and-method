@@ -26,7 +26,7 @@
         margin-left: 0.5em;
         transition: transform 0.25s ease-out;
       }
-    
+
       &:hover {
         color: $bluegem;
         transform: translateX(3px);
@@ -46,6 +46,8 @@
   overflow-x: scroll;
   overflow-y: visible;
   padding: em(50px) em(100px) em(75px);
+  padding: em(50px) em(50px) em(75px);
+  width: auto;
   width: auto;
 
   > div {
@@ -55,7 +57,7 @@
     width: 45%;
 
     & + div {
-      margin-left: 3em;
+      margin-left: 2.5em;
     }
   }
 

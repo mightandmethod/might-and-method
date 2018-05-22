@@ -12,3 +12,12 @@ $baseFontSize: 18px;
 $systemFonts: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif';
 $sansSerif: 'Work Sans', $systemFonts;
 $serif: 'butler', serif;
+
+// Responsive -- rewriting vars set in include-media plugin
+$breakpoints: (
+  small: 575px,
+  medium: 768px,
+  large: 991px,
+  xlarge: 1199px,
+  xxlarge: 1680px
+);
