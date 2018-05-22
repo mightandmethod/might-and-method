@@ -31,11 +31,11 @@
     &--selected {
       > div {
         div:first-child {
-          animation: fadeAndSlideIn 0.5s ease-in-out 0.1s forwards;
+          animation: fadeAndSlideIn 0.5s ease-out 0.1s forwards;
         }
 
         div:last-child {
-          animation: fadeAndSlideIn 0.5s ease-in-out 0.3s forwards
+          animation: fadeAndSlideIn 0.5s ease-out 0.3s forwards
         }
       }
     }

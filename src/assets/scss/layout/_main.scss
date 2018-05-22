@@ -20,7 +20,7 @@ body {
 
     &__links {
       opacity: 0;
-      transform: translateY(1em);
+      transform: translateY(1.5em);
     }
   }
 
@@ -44,7 +44,10 @@ body {
       display: inline-block;
       opacity: 1;
       transform: translateX(0);
-      transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+      transition: 
+        opacity 1.5s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 1.5s cubic-bezier(0.23, 1, 0.32, 1)
+      ;
 
       &:nth-of-type(1) {
         transition-delay: 0.5s;
@@ -72,7 +75,7 @@ body {
     justify-content: space-between;
     opacity: 1;
     transform: translateY(0);
-    transition: all 0.35s ease-out 1.25s;
+    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 1.5s;
 
     a:not(.button-link) {
       color: #9f96d6;
