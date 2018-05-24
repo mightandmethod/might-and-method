@@ -3,6 +3,12 @@ body {
   background-color: $whiteish;
 }
 
+html {
+  &.is-splash {
+    overflow: hidden;
+  }
+}
+
 .home-main {
   background: darken($bluegem, 25%); /* fallback */
   background: linear-gradient(135deg, $bluegem 30%, darken($bluegem, 35%));
@@ -13,6 +19,9 @@ body {
 
 .is-loading {
   .hero {
+    .big-m {
+      opacity: 0;
+    }
     h1 span {
       opacity: 0;
       transform: translateX(0.25em);
@@ -63,6 +72,15 @@ body {
       color: $brinkpink;
       display: block;
       font-weight: 900;
+    }
+  }
+
+  &-splash {
+    text-align: center;
+
+    .big-m {
+      opacity: 1;
+      transition: all 0.45s ease-out;
     }
   }
 

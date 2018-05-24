@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 
 class Template extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       loading: 'is-loading'
     }
@@ -16,7 +16,7 @@ class Template extends React.Component {
 
   componentDidMount () {
     this.timeoutId = setTimeout(() => {
-        this.setState({loading: ''});
+        this.setState({loading: ''})
     }, 500);
   }
 
@@ -41,7 +41,7 @@ class Template extends React.Component {
         >
           {children()}
         </EmergeContainer>
-        <Footer />
+        { this.state.preLaunch && <Footer />}
       </div>
     )
   }
