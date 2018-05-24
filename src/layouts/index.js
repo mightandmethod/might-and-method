@@ -16,13 +16,13 @@ class Template extends React.Component {
 
   componentDidMount () {
     this.timeoutId = setTimeout(() => {
-        this.setState({loading: ''})
+      this.setState({loading: ''})
     }, 500);
   }
 
   componentWillUnmount () {
     if (this.timeoutId) {
-        clearTimeout(this.timeoutId);
+      clearTimeout(this.timeoutId);
     }
   }
 
@@ -32,7 +32,6 @@ class Template extends React.Component {
     return (
       <div className={`body ${this.state.loading}`}>
         <EmergeContainer
-          useWindowAsContainer={true}
           args={{
             offsetTop: 90,
             elemCushion: 0.75,
