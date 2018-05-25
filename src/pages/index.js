@@ -12,11 +12,8 @@ import { animateScroll as scroll, scroller } from 'react-scroll'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faArrowDown from '@fortawesome/fontawesome-free-solid/faArrowDown'
 import faLongArrowAltRight from '@fortawesome/fontawesome-free-solid/faLongArrowAltRight'
+import heroBG from '../../public/static/images/herobg.jpg'
 import scrollSvg from '../assets/images/scroll.svg'
-import discoverDrawing from '../assets/images/discover-story.svg'
-import brandDrawing from '../assets/images/build-brand.svg'
-import onlineDrawing from '../assets/images/craft-online-presence.svg'
-import delightDrawing from '../assets/images/delight-customers.svg'
 
 // Components
 import Nav from '../components/Nav'
@@ -30,17 +27,27 @@ class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stickyNav: false
+      stickyNav: false,
+      tabIndex: 0,
+      loading: '',
     }
+  }
+
+  handleImageLoaded() {
+    this.setState({ loading: 'loaded' });
   }
 
   scrollTo(elem) {
     scroller.scrollTo(elem, {
-      duration: 1000,
+      duration: 1200,
       delay: 0,
       smooth: 'easeInOutQuart',
-      offset: -180
+      offset: -90
     })
+  }
+
+  switchTabs(tab) {
+    this.setState(() => ({ tabIndex: tab }));
   }
 
   _handleWaypointEnter = () => {
@@ -67,15 +74,15 @@ class Index extends React.Component {
         <section className="home-main">
           <div className="wrapper">
             <div className="hero">
-              <h1><span>We build digital solutions</span> <span>to help your company</span> <span className="bold">thrive.</span></h1>
+              <h1><span>We simplify marketing</span> <span>so your company will</span> <span className="bold">thrive.</span></h1>
               <div className="hero__links">
                 <ButtonLink
-                  href="/contact"
+                  href="/start"
                   size="large"
                   text="Let's get started"
                 />
-                <a href="javascript:(0);" onClick={() => this.scrollTo('services-section')}>
-                  Learn more about us <FontAwesomeIcon icon={faArrowDown} />
+                <a href="javascript:(0);" onClick={() => this.scrollTo('plan-section')}>
+                  See how we can help you <FontAwesomeIcon icon={faArrowDown} />
                 </a>
               </div> 
             </div>
@@ -83,88 +90,114 @@ class Index extends React.Component {
           </div>
         </section>
 
-        <section className="services" name="services-section">
+        <div className="hero-bg">
+          <img
+            className={this.state.loading}
+            src={heroBG}
+            onLoad={this.handleImageLoaded.bind(this)}
+          />
+        </div>
+
+        <div className="content-body">
+
+        <section className="plan" name="plan-section">
           <header>
             <Emerge>
-              <h2>Your company has a story to tell. We help you build a successful strategy from start to finish to share it as effectively as possible.</h2>  
+              <h2>It takes more than just having a website to conquer your market, but creating an effective digital marketing strategy shouldn't keep you up at night. We're here to help.</h2>  
             </Emerge>
+
+            <div className="flex">
+              <Emerge>
+                <p>Having a website is important, don't get us wrong, but it's only one piece of an effective, engaging digital marketing strategy. We've created a simple, proven process to enhance your brand, create a beautiful website, and delight your customers.</p>
+              </Emerge>
+
+              <Emerge>
+                <p>Leave behind the complexity, cost, and confusion of agencies, website builders, or trying to do it all yourself. Take control of your company's future with Might &amp; Method at your side.</p>
+              </Emerge>
+            </div>
           </header>
 
           <Tabs
+            selectedIndex={this.state.tabIndex}
+            onSelect={tabIndex => this.setState({ tabIndex })}
             className="service-tabs"
             selectedTabClassName="service-tabs__tab--selected"
-            // forceRenderTabPanel
             selectedTabPanelClassName="service-tabs__panel--selected"
           >
             <TabList className="service-tabs__tab-list">
-              <Tab className="service-tabs__tab">Discover your story</Tab>
-              <Tab className="service-tabs__tab">Build your brand</Tab>
-              <Tab className="service-tabs__tab">Craft your online presence</Tab>
-              <Tab className="service-tabs__tab">Delight your customers</Tab>
+              <Tab className="service-tabs__tab">1. Discover your story</Tab>
+              <Tab className="service-tabs__tab">2. Build your brand</Tab>
+              <Tab className="service-tabs__tab">3. Craft your online presence</Tab>
+              <Tab className="service-tabs__tab">4. Delight your customers</Tab>
             </TabList>
 
             <TabPanel className="service-tabs__panel">
               <div>
                 <div>
-                  <h3>Here's a title</h3>
-                  <p>Your company has a story to tell. We can help you build a successful strategy from start to finish to share it as effectively as possible. Check out some of our services below to learn more about how we can work together to create something awesome!</p>
-                  
-                  <ButtonLink
-                    href="/contact"
-                    type="secondary"
-                    text="Let's get started"
-                  />
+                  <h3>Champion your customers; become their champion.</h3>
+                  <p>Our process starts with some simple questions to create a storyboard-like narrative for your company and your customers. This becomes the engine that will drive your brand, communication, and website. It'll create razor focus for us in the next steps, and it's a lot of fun!</p>
+                  <a href="javascript:(0);"
+                    onClick={() => this.switchTabs(1)}
+                    className="button-link secondary mini has-arrow"
+                  >Next <FontAwesomeIcon icon={faLongArrowAltRight} /></a>
                 </div>
                 <div>
-                  <img src={discoverDrawing} className="drawing" />
-                </div>
-              </div>
-            </TabPanel>
-            <TabPanel className="service-tabs__panel">
-              <div>
-                <div>
-                  <h3>Here's a second title</h3>
-                  <p>Your company has a story to tell. We can help you build a successful strategy from start to finish to share it as effectively as possible. Check out some of our services below to learn more about how we can work together to create something awesome!</p>
-                  <ButtonLink
-                    href="/contact"
-                    type="secondary"
-                    text="Let's get started"
-                  />
-                </div>
-                <div>
-                  <img src={brandDrawing} className="drawing" />
+                  <div className="plan-image discover">
+                    <img src="/static/images/discover.jpg" />
+                  </div>
                 </div>
               </div>
             </TabPanel>
             <TabPanel className="service-tabs__panel">
               <div>
                 <div>
-                  <h3>Here's a third title</h3>
-                  <p>Your company has a story to tell. We can help you build a successful strategy from start to finish to share it as effectively as possible. Check out some of our services below to learn more about how we can work together to create something awesome!</p>
-                  <ButtonLink
-                    href="/contact"
-                    type="secondary"
-                    text="Let's get started"
-                  />
+                  <h3>Brand is more than just a logo.</h3>
+                  <p>We'll review your current branding through the lens of your story and help perfect (or create!) it. The goal is to create a personality for your company that will resonate the most with your customers. We'll go over your logo and colors, but just as importantly, your communication style, voice, and vibe.</p>
+                  <a href="javascript:(0);"
+                    onClick={() => this.switchTabs(2)}
+                    className="button-link secondary mini has-arrow"
+                  >Next <FontAwesomeIcon icon={faLongArrowAltRight} /></a>
                 </div>
                 <div>
-                  <img src={onlineDrawing} className="drawing" />
+                  <div className="plan-image brand">
+                    <img src="/static/images/brand.jpg" />
+                  </div>
                 </div>
               </div>
             </TabPanel>
             <TabPanel className="service-tabs__panel">
               <div>
                 <div>
-                  <h3>Titles are fun and cool and stuff</h3>
-                  <p>Your company has a story to tell. We can help you build a successful strategy from start to finish to share it as effectively as possible. Check out some of our services below to learn more about how we can work together to create something awesome!</p>
+                  <h3>Convert pixels into magic.</h3>
+                  <p>We'll hand-craft a kick-butt, speedy-as-heck, drop-dead-gorgeous website for your company that perfectly distills your shiny new brand and story which you and your customers will love. But why stop there? We can even help you create more effective email campaigns and generate more leads. The sky's the limit!</p>
+                  <a href="javascript:(0);"
+                    onClick={() => this.switchTabs(3)}
+                    className="button-link secondary mini has-arrow"
+                  >Next <FontAwesomeIcon icon={faLongArrowAltRight} /></a>
+                </div>
+                <div>
+                  <div className="plan-image online">
+                    <img src="/static/images/online.jpg" />
+                  </div>
+                </div>
+              </div>
+            </TabPanel>
+            <TabPanel className="service-tabs__panel">
+              <div>
+                <div>
+                  <h3>Turn your customers into raving fans.</h3>
+                  <p>Drumming up new business is one thing, but creating brand loyalty is the dream. When you've given your customers the gift of delight, they'll keep coming back for more. We'll show you how to use all these fancy new tools in your belt to delight their socks off.</p>
+                  <p style={{ fontWeight: '800', fontSize: '0.8em' }}>Are you ready to create something awesome together?</p>
                   <ButtonLink
-                    href="/contact"
+                    href="/start"
                     type="secondary"
-                    text="Let's get started"
+                    text="Let's do this thing!"
                   />
                 </div>
                 <div>
-                  <img src={delightDrawing} className="drawing" />
+                  <div className="plan-image delight">
+                    <img src="/static/images/delight.jpg" />
+                  </div>
                 </div>
               </div>
             </TabPanel>
@@ -304,6 +337,7 @@ class Index extends React.Component {
             }}>&nbsp;</div>
           </WorkSamples>
         </section>
+        </div>
       </div> // React containment div
     )
   }

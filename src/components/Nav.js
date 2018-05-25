@@ -31,19 +31,16 @@ class Nav extends React.Component {
 
         <ul className={`menu ${this.state.showHideMobileNav}`}>
           <li>
-            <Link to="/services">What we do</Link>
+            <Link to="/who">Who we're for</Link>
           </li>
           <li>
-            <Link to="/work">Our work</Link>
+            <Link to="/how">How it works</Link>
           </li>
           <li>
-            <Link to="/pricing">Pricing</Link>
+            <Link to="/what">What we offer</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/start">Get started</Link>
           </li>
         </ul>
         

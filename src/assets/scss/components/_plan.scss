@@ -1,0 +1,33 @@
+.plan {
+  padding: em(100px) 0 0;
+
+  header {
+    margin: 0 auto;
+    margin-bottom: em(100px);
+    width: 70%;
+
+    h2 {
+      color: $bluegem;
+      font-size: em(44px);
+      margin-bottom: em(25px);
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    p {
+      width: 47%;
+      color: $bluegem;
+      font-size: 1em;
+      margin-bottom: 0;
+      transition-delay: 0.25s;
+
+      &:last-child {
+        transition-delay: 0.5s;
+      }
+    }
+  }
+}

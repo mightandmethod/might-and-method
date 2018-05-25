@@ -16,6 +16,7 @@ nav {
   transition: all 0.5s ease-in-out;
   vertical-align: middle;
   width: 100vw;
+  z-index: 2;
 
   .logo {
     z-index: 2;
@@ -28,7 +29,7 @@ nav {
     z-index: 99;
   }
 
-  @include media("<=medium") {
+  @include media("<medium") {
     ul.menu {
       position: fixed;
       width: 100vw;
@@ -41,7 +42,7 @@ nav {
       color: $white !important;
       z-index: 1;
       opacity: 0;
-      transition: opacity 0.25s;
+      transition: all 0.3s -0s;
       pointer-events: none;
 
       &.toggled {
@@ -124,9 +125,9 @@ nav {
   }
 } // end nav
 
-@include media(">=large") {
+@include media(">=medium") {
   nav {
-    padding: em(50px);
+    padding: em(40px) em(50px);
 
     a.mobile-menu {
       display: none;
@@ -163,7 +164,7 @@ nav {
           }
 
           &:hover:after {
-            opacity: 0.4;
+            opacity: 0.5;
             transform: translateX(0);
           }
         }
@@ -172,7 +173,7 @@ nav {
           border: 2px solid $brinkpink;
           border-radius: 2px;
           color: $brinkpink;
-          padding: 0.25em 1em;
+          padding: 0.35em 1em 0.4em;
           position: relative;
           transition: color 0.25s;
           z-index: 2;
