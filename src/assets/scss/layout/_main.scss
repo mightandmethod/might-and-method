@@ -29,22 +29,6 @@ body,
   }
 }
 
-.hero-bg {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity ease-out 0.5s;
-
-  &.loaded {
-    opacity: 1;
-  }
-}
-
 .is-loading {
   .hero {
     h1 span {
