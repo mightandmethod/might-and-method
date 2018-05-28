@@ -1,19 +1,33 @@
 #footer {
   color: $white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   height: auto;
+
+  @include media(">=medium") {
+    flex-direction: row;
+  }
 
   .footer__sidebar {
     background: #251f4d;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     padding: 0 2em 2em;
-    width: 20%;
+    align-items: flex-end;
+
+    @include media(">=medium") {
+      flex-direction: column;
+      width: 20%;
+      align-items: flex-start;
+    }
 
     div:first-child {
-      margin-top: 100px;
+      margin-top: 35px;
+
+      @include media(">=medium") {
+        margin-top: 100px;
+      }
 
       h1 {
         color: $brinkpink;
@@ -42,18 +56,31 @@
 
   .footer__content {
     background-color: #120f26;
-    width: 80%;
+
+    @include media(">=medium") {
+      width: 80%;
+    }
   }
 
   .content__wrap {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    margin: 140px auto 14%;
+    margin: 50px auto 14%;
     width: 80%;
 
+    @include media(">=medium") {
+      flex-direction: row;
+      margin: 140px auto 14%;
+    }
+
     div {
-      width: 25%;
+      margin: 0 0 1.5em;
+
+      @include media(">=medium") {
+        width: 25%;
+        margin: 0;
+      }
 
       &:first-child {
         a {

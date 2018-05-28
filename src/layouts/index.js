@@ -1,16 +1,21 @@
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
+import get from 'lodash/get'
+import Helmet from 'react-helmet'
+import Waypoint from 'react-waypoint'
 import 'typeface-work-sans'
 import 'typeface-butler'
 import '../assets/scss/main.scss'
-import {EmergeContainer} from 'react-emergence'
+import { EmergeContainer } from 'react-emergence'
 
+import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 
 class Template extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: 'is-loading'
+      loading: 'is-loading',
+      stickyNav: false,
     }
   }
 
@@ -26,11 +31,26 @@ class Template extends React.Component {
     }
   }
 
+  _handleWaypointEnter = () => {
+    this.setState(() => ({ stickyNav: false }));
+  }
+
+  _handleWaypointLeave = () => {
+    this.setState(() => ({ stickyNav: true }));
+  }
+
   render() {
     const { children } = this.props
 
     return (
       <div className={`body ${this.state.loading}`}>
+        <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
+        <Waypoint
+            onEnter={this._handleWaypointEnter}
+            onLeave={this._handleWaypointLeave}
+          >
+        </Waypoint>
+        <Nav sticky={this.state.stickyNav} />
         <EmergeContainer
           useWindowAsContainer={true}
           args={{
@@ -52,3 +72,13 @@ Template.propTypes = {
 }
 
 export default Template
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

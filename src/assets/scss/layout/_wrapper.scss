@@ -2,8 +2,29 @@
   display: flex;
   min-height: 100vh;
   width: 100%;
+  flex-direction: column;
 
   &.bg-whiteish {
     background: $whiteish;
   }
 }
+
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  padding: 0 20px;
+
+  // @include media(">small") {
+  //   width: 85%;
+  //   margin: 0 auto;
+  //   padding: 0;
+  // }
+
+  // @include media(">medium") {
+  //   width: 70%;
+  // }
+}
+

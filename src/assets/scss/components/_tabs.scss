@@ -1,11 +1,56 @@
 .service-tabs {
+  .tab-navigation {
+    position: relative;
+    
+    ul::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:before {
+      content: '';
+      width: 20px;
+      height: calc(100% - 1px);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-image: linear-gradient(to right,$whiteish,rgba(255,255,255,0));
+    }
+    
+    &:after {
+      content: '';
+      width: 20px;
+      height: calc(100% - 1px);
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      background-image: linear-gradient(to right,rgba(255,255,255,0),$whiteish);
+    }
+  }
   &__tab-list {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: 70%;
+    flex-flow: row nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 0 20px;
+
+    @include media(">=medium") {
+      width: 70%;
+      justify-content: space-around;
+    }
 
     li {
+      @include media("<=medium") {
+        flex: 0 0 auto;
+        margin-right: 0.75em;
+        font-size: 0.7em;
+      }
+
       border-bottom: 3px solid transparent;
       color: darken($whiteish, 35%);
       display: inline-flex;
@@ -29,7 +74,12 @@
     width: 100%;
 
     &--selected {
-      padding: em(100px) 0;
+      padding: em(50px) 0 em(75px);
+
+      @include media(">=medium") {
+        padding: em(75px) 0;
+      }
+
       > div {
         div:first-child {
           animation: fadeAndSlideIn 1.65s cubic-bezier(0.23, 1, 0.32, 1) 0.1s forwards;
@@ -45,42 +95,71 @@
     > div {
       align-items: center;
       display: flex;
-      flex-direction: row;
+      flex-direction: column-reverse;
       justify-content: space-between;
       margin: auto;
       min-height: em(475px);
-      width: 70%;
+      width: 85%;
+
+      @include media(">=medium") {
+        width: 70%;
+        flex-direction: row;
+      }
 
       div:first-child {
         opacity: 0;
-        width: 43%;
+        width: 100%;
+
+        @include media(">=medium") {
+          width: 43%;
+        }
 
         h3 {
           color: $brinkpink;
           font-family: $sansSerif;
-          font-size: em(24px);
+          font-size: 0.8em;
+          text-align: center;
           font-weight: 800;
           margin-bottom: em(15px);
+
+          @include media(">=medium") {
+            font-size: em(24px);
+            text-align: left;
+          }
         }
 
         p {
           color: $bluegem;
-          font-size: em(18px);
+          font-size: 0.75em;
           margin-bottom: em(25px);
+
+          @include media(">=medium") {
+            font-size: em(18px);
+          }
         }
       }
 
       div:last-child {
-        opacity: 0;
-        text-align: right;
-        width: 50%;
+        opacity: 0;        
+        width: 90%;
+        text-align: center;
+        margin-bottom: em(15px);
+
+        @include media(">=medium") {
+          width: 44%;
+          text-align: right;
+          margin-bottom: 0;
+        }
 
         .plan-image {
           position: relative;
           display: inline-block;
-          height: 450px;
-          width: 400px;
+          
           border-radius: 10px;
+
+          @include media(">=medium") {
+            width: 80%;
+          }
 
           img {
             width: 100%;
