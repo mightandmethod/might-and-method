@@ -1,20 +1,37 @@
 // Main styles
-body {
+body,
+.content-body {
   background-color: $whiteish;
 }
 
-html {
-  &.is-splash {
-    overflow: hidden;
-  }
+.content-body {
+  z-index: 2;
 }
 
 .home-main {
-  background: darken($bluegem, 25%); /* fallback */
-  background: linear-gradient(135deg, $bluegem 30%, darken($bluegem, 35%));
+  position: relative;
   display: flex;
   height: 100vh;
-  width: 100%;
+  z-index: 1;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: darken($bluegem, 25%); /* fallback */
+    background: linear-gradient(140deg, darken($bluegem, 15%) 45%, darken($brinkpink, 5%));
+    background-blend-mode: multiply;
+    opacity: 0.9;
+  }
+}
+
+.how-hero {
+  height: 85vh;
+  position: relative;
 }
 
 .is-loading {
@@ -29,7 +46,7 @@ html {
 
     &__links {
       opacity: 0;
-      transform: translateY(1em);
+      transform: translateY(1.5em);
     }
   }
 
@@ -40,20 +57,37 @@ html {
 
 .hero {
   margin: auto;
-  width: 75%;
+  margin-top: calc(80px + 10%);
+
+  @include media(">=medium") {
+    width: 70%;
+  }
+
+  @include media(">=xlarge") {
+    width: 80%;
+  }
 
   h1 {
     color: $white;
-    font-size: 7vw;
+    font-size: 15vw;
     font-weight: 400;
-    line-height: 1;
+    line-height: 1.15;
     margin-bottom: 0.5em;
+
+    @include media(">=medium") {
+      font-size: 7.75vw;
+      margin-bottom: 0.5em;
+      line-height: 1;
+    }
 
     span {
       display: inline-block;
       opacity: 1;
       transform: translateX(0);
-      transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+      transition: 
+        opacity 1.5s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 1.5s cubic-bezier(0.23, 1, 0.32, 1)
+      ;
 
       &:nth-of-type(1) {
         transition-delay: 0.5s;
@@ -90,14 +124,27 @@ html {
     justify-content: space-between;
     opacity: 1;
     transform: translateY(0);
-    transition: all 0.35s ease-out 1.25s;
+    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 1.5s;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include media(">=medium") {
+      flex-direction: row;
+    }
 
     a:not(.button-link) {
-      color: #9f96d6;
-      line-height: 1;
-      margin-left: 2em;
+      @include media("<=medium") {
+        display: none;
+      }
+      color: $whiteish;
+      line-height: 1.1;
       overflow: hidden;
       transition: color 0.25s ease-out;
+      margin-top: 1.5em;
+
+      @include media(">=medium") {
+        margin-left: 2em;
+      }
 
       &:hover {
         color: $brinkpink;
@@ -118,20 +165,20 @@ html {
 }
 
 .scroll {
+  @include media("<=320px") {
+    display: none;
+  }
+  display: block;
+  position: relative;
   animation: 2s infinite ease-in-out 4s scrollBounce;
-  bottom: 1.5em;
-  left: 50%;
+  bottom: 0.75em;
   margin: 0 auto;
-  opacity: 0.4;
-  position: absolute;
-  right: 50%;
+  opacity: 0.9;
   transform: translateY(0);
   transition: opacity 1s ease-out 2.25s;
-}
 
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
+  @include media(">medium") {
+    bottom: 1.5em;
   }
 }
 
@@ -140,38 +187,63 @@ html {
   background: $bluegem-darker;
   display: flex;
   flex-direction: column;
-  padding: em(100px) 0;
+  padding: em(25px) 0;
   position: relative;
+
+  @include media(">=medium") {
+    padding: em(100px) 0;
+  }
 
   .button-link {
     display: flex;
     margin: 0 auto;
-    top: calc(-100px - 23px);
+    top: calc(-25px - 23px);
     width: auto;
+    
+    @include media(">=medium") {
+      top: calc(-100px - 23px);
+    }
   }
 
   .content {
     margin: auto;
-    width: 70%;
+    width: 85%;
+
+    @include media(">=medium") {
+      width: 70%;
+    }
   }
 
   header {
-    margin-bottom: em(100px);
+    margin-bottom: em(50px);
+
+    @include media(">=medium") {
+      margin-bottom: em(50px);
+    }
 
     h1 {
       color: $white;
       font-family: $sansSerif;
-      font-size: em(18px);
+      font-size: em(14px);
       font-weight: 800;
       margin-bottom: em(15px);
+
+      @include media(">=medium") {
+        font-size: em(18px);
+      }
     }
 
     p {
       color: $brinkpink;
       font-family: $serif;
-      font-size: em(40px);
+      font-size: em(22px);
       font-weight: 900;
-      line-height: 1.25;
+      line-height: 1.4;
+
+      @include media(">=medium") {
+        font-size: em(40px);
+        line-height: 1.25;
+      }
 
       span {
         color: $white;
@@ -195,6 +267,9 @@ html {
   }
 
   a:not(.button-link) {
+    @include media("<medium") {
+      display: none;
+    }
     color: $brinkpink;
     display: inline-block;
     line-height: 1;

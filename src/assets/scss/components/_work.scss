@@ -1,20 +1,32 @@
 .work {
   background-color: $whiteish;
-  margin: em(100px) auto 0;
+  padding: em(50px) 0 0;
+
+  @include media(">=medium") {
+    padding: em(100px) 0 0;
+  }
 
   header {
     align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     margin: 0 auto;
-    width: 70%;
+    width: 85%;
+
+    @include media(">=medium") {
+      flex-direction: row;
+    }
 
     h2 {
       color: $bluegem;
       font-family: $sansSerif;
       font-size: em(18px);
-      margin: 0;
+      margin: 0 0 em(15px) 0;
+
+      @include media(">=medium") {
+        margin: 0;
+      }
     }
 
     a {
@@ -41,21 +53,36 @@
 
 .work-samples {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: space-between;
   overflow-x: scroll;
   overflow-y: visible;
-  padding: em(50px) em(50px) em(75px);
+  padding: em(25px);
   width: auto;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include media(">=medium") {
+    padding: em(50px);
+  }
 
   > div {
     display: flex;
-    min-height: 400px;
-    min-width: 600px;
-    width: 45%;
+    flex: 0 0 auto;
+    width: 85%;
+
+    @include media(">medium") {
+      width: 45%;
+    }
 
     & + div {
-      margin-left: 2.5em;
+      margin-left: 1.5em;
+      
+      @include media(">=medium") {
+        margin-left: 2.5em;
+      }
     }
   }
 
@@ -67,19 +94,28 @@
     h6 {
       color: #abaab3;
       font-family: $sansSerif;
-      font-size: em(10px);
+      font-size: em(9px);
       font-weight: normal;
       letter-spacing: 2px;
-      margin: em(35px) 0 em(15px);
+      margin: em(50px) 0 em(15px);
       text-transform: uppercase;
+
+      @include media(">=medium") {
+        font-size: em(10px);
+        margin: em(35px) 0 em(15px);
+      }
     }
 
     h3 {
       color: $bluegem-darker;
       font-family: $sansSerif;
-      font-size: em(20px);
+      font-size: em(16px);
       font-weight: 800;
       margin: 0;
+
+      @include media(">=medium") {
+        font-size: em(20px);
+      }
     }
 
     &__image {

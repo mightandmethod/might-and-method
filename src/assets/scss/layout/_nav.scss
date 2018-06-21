@@ -10,16 +10,78 @@ nav {
   background: none;
   display: flex;
   justify-content: space-between;
-  padding: em(25px);
+  padding: em(15px) em(25px);
   position: absolute;
   top: 0;
   transition: all 0.5s ease-in-out;
   vertical-align: middle;
-  width: 100%;
+  width: 100vw;
+  z-index: 2;
 
-  @include media("<large") {
+  .logo {
+    z-index: 2;
+  }
+
+  &.sticky {
+    background: $white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: fixed;
+    z-index: 99;
+  }
+
+  @include media("<medium") {
     ul.menu {
-      display: none;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      padding: 35% em(30px) 0;
+      left: 0;
+      top: 0;
+      background: $white;
+      color: $white !important;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.3s -0s;
+      pointer-events: none;
+
+      &.toggled {
+        opacity: 1;
+        pointer-events: initial;
+
+        li {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      li {
+        display: block;
+        opacity: 0;
+        transform: translateX(-2em);
+        transition: all 0.2s cubic-bezier(0.23, 1, 0.85, 1) 0.2s;
+
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            transition-delay:(#{$i*0.05s});
+          }
+        }
+      }
+
+      li a {
+        display: block;
+        padding: 5%;
+        text-align: center;
+        font-size: 9vw;
+        font-weight: 800;
+        color: $brinkpink;
+      }
+
+      li:last-child a {
+        background: $bluegem;
+        border-radius: 4px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        color: $white;
+      }
     }
   }
 
@@ -27,10 +89,7 @@ nav {
     display: block;
     transition-duration: 0.25s;
     padding: 0.325em;
-
-    @include media(">=large") {
-      display: none;
-    }
+    z-index: 2;
 
     &.toggled {
       ul.buns {
@@ -43,38 +102,44 @@ nav {
         }
       }
     }
+  }
 
-    ul.buns {
-      width: em(35px);
-      height: em(35px);
-      list-style: none;
-      margin: -2em/2 0 0 -1.625em/2;
-      padding: 0;
+  ul.buns {
+    width: em(35px);
+    height: em(35px);
+    list-style: none;
+    padding: 0;
+    transition: transform 0.5s cubic-bezier(.23,1,.32,1);
+    transform: translateZ(0);
+    color: $brinkpink;
+
+    li.bun {
+      width: 100%;
+      height: 3px;
+      background-color: $brinkpink;
+      position: absolute;
+      top: 50%;
+      margin-top: -1px;
+      transform: translateY(-5px) translateZ(0);
       transition: transform 0.5s cubic-bezier(.23,1,.32,1);
-      transform: translateZ(0);
-      color: $brinkpink;
 
-      li.bun {
-        width: 100%;
-        height: 3px;
-        background-color: $brinkpink;
-        position: absolute;
-        top: 50%;
-        margin-top: -1px;
-        transform: translateY(-5px) translateZ(0);
-        transition: transform 0.5s cubic-bezier(.23,1,.32,1);
-
-        &:last-child {
-          transform: translateY(5px) translateZ(0);
-        }
+      &:last-child {
+        transform: translateY(5px) translateZ(0);
       }
     }
   }
+} // end nav
 
-  @include media(">=large") {
-    padding: em(50px);
+@include media(">=medium") {
+  nav {
+    padding: em(40px) em(50px);
+
+    a.mobile-menu {
+      display: none;
+    }
 
     ul.menu {
+      display: block;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -104,7 +169,7 @@ nav {
           }
 
           &:hover:after {
-            opacity: 0.4;
+            opacity: 0.5;
             transform: translateX(0);
           }
         }
@@ -113,7 +178,7 @@ nav {
           border: 2px solid $brinkpink;
           border-radius: 2px;
           color: $brinkpink;
-          padding: 0.25em 1em;
+          padding: 0.35em 1em 0.4em;
           position: relative;
           transition: color 0.25s;
           z-index: 2;
@@ -139,35 +204,30 @@ nav {
         }
       }
     }
-  }
 
-  &.sticky {
-    background: $white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    padding: em(25px) em(50px);
-    position: fixed;
-    top: 0;
-    z-index: 99;
+    &.sticky {
+      padding: em(25px) em(50px);
 
-    ul li a {
-      color: $bluegem;
-
-      &:after {
-        border-color: $bluegem;
+      ul.menu li a {
+        color: $bluegem;
+    
+        &:after {
+          border-color: $bluegem;
+        }
       }
-    }
-
-    ul li:last-child a {
-      background: $brinkpink;
-      color: $white;
-
-      &:hover {
-        border-color: darken($brinkpink, 10%);
+  
+      ul.menu li:last-child a {
+        background: $brinkpink;
         color: $white;
-      }
-
-      &:after {
-        background: darken($brinkpink, 10%);
+    
+        &:hover {
+          border-color: darken($brinkpink, 10%);
+          color: $white;
+        }
+    
+        &:after {
+          background: darken($brinkpink, 10%);
+        }
       }
     }
   }

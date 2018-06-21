@@ -29,11 +29,11 @@ const Footer = (props) => (
         <div>
           <h4>Might & Method</h4>
           <ul>
-            <li><Link to="/about">Who we are</Link></li>
-            <li><Link to="/services">What we do</Link></li>
-            <li><Link to="/work">Work showcase</Link></li>
-            <li><Link to="/pricing">Pricing</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/about">About us</Link></li>
+            <li><Link to="/who">Who we're for</Link></li>
+            <li><Link to="/how">How it works</Link></li>
+            <li><Link to="/what">What we offer</Link></li>            
+            <li><Link to="/start">Get started</Link></li>
           </ul>
         </div>
 

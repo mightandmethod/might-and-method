@@ -2,8 +2,41 @@
   display: flex;
   min-height: 100vh;
   width: 100%;
+  flex-direction: column;
 
   &.bg-whiteish {
     background: $whiteish;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  padding: 0 20px;
+
+  // @include media(">small") {
+  //   width: 85%;
+  //   margin: 0 auto;
+  //   padding: 0;
+  // }
+
+  // @include media(">medium") {
+  //   width: 70%;
+  // }
+}
+
+.bg-overlay {
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.75);
   }
 }
