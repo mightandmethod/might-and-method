@@ -1,7 +1,7 @@
 // Core
 import React, {PropTypes} from 'react'
-import Link from 'gatsby-link'
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Link } from 'gatsby'
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import { Emerge } from 'react-emergence'
 import { animateScroll as scroll, scroller } from 'react-scroll'
 
@@ -13,6 +13,7 @@ import heroBg from '../../public/static/images/herobg.jpg'
 import scrollSvg from '../assets/images/scroll.svg'
 
 // Components
+import Layout from '../components/Layout'
 import BackgroundImage from '../components/BackgroundImage'
 import ButtonLink from '../components/ButtonLink'
 import WorkSamples from '../components/WorkSamples'
@@ -41,7 +42,7 @@ class Index extends React.Component {
 
   render() {
     return (
-      <div>        
+      <Layout>      
         <section className="home-main container">
           <div className="wrapper">
             <div className="hero">
@@ -240,7 +241,7 @@ class Index extends React.Component {
             </WorkSamples>
           </section>
         </div>
-      </div> // React containment div
+      </Layout> // React containment div
     )
   }
 }

@@ -1,7 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
-
-import logo from '../assets/images/logo.svg';
+import { Link } from 'gatsby'
 
 const Footer = (props) => (
   <footer id="footer">

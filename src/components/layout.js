@@ -6,6 +6,7 @@ import 'typeface-work-sans'
 import 'typeface-butler'
 import '../assets/scss/main.scss'
 import { EmergeContainer } from 'react-emergence'
+import { StaticQuery } from 'gatsby'
 
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
@@ -43,41 +44,44 @@ class Template extends React.Component {
     const { children } = this.props
 
     return (
-      <div className={`body ${this.state.loading}`}>
-        <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
-        <Waypoint
-            onEnter={this._handleWaypointEnter}
-            onLeave={this._handleWaypointLeave}
-          >
-        </Waypoint>
-        <Nav sticky={this.state.stickyNav} />
-        <EmergeContainer
-          args={{
-            offsetTop: 90,
-            elemCushion: 0.75,
-            reset: false
-          }}
-        >
-          {children()}
-        </EmergeContainer>
-        { this.state.preLaunch && <Footer />}
-      </div>
+      <StaticQuery
+        query={graphql`
+          query IndexQuery
+            site {
+              siteMetadata {
+                title
+              }
+            }
+          }
+        `}
+        render={data => (
+          <div className={`body ${this.state.loading}`}>
+            <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
+            <Waypoint
+                onEnter={this._handleWaypointEnter}
+                onLeave={this._handleWaypointLeave}
+              >
+            </Waypoint>
+            <Nav sticky={this.state.stickyNav} />
+            <EmergeContainer
+              args={{
+                offsetTop: 90,
+                elemCushion: 0.75,
+                reset: false
+              }}
+            >
+              {children}
+            </EmergeContainer>
+            { this.state.preLaunch && <Footer />}
+          </div>
+        )}
+      />
     )
   }
 }
 
 Template.propTypes = {
-  children: PropTypes.func
+  data: PropTypes.func
 }
 
 export default Template
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`

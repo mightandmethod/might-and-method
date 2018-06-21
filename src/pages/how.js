@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react'
 import BackgroundImage from '../components/BackgroundImage'
 import { Emerge } from 'react-emergence'
+import Layout from '../components/Layout'
 
 import bgImage from '../../public/static/images/startup-desktop.jpg'
 
 const HowPage = () => (
-  <div>
+  <Layout>
     <section className="how-hero container bg-overlay">
       <div className="flex">
         <h1>Testing</h1>
@@ -32,7 +33,7 @@ const HowPage = () => (
         </header>
       </section>
     </div>
-  </div>
+  </Layout>
 )
 
 HowPage.propTypes = {

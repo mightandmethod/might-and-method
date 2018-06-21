@@ -1,6 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import ButtonLink from '../components/ButtonLink'
+import { Link } from 'gatsby'
 
 const Work = (props) => (
     <div>

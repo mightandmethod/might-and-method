@@ -1,6 +1,6 @@
 import React from "react";
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import {faLongArrowAltRight} from '@fortawesome/fontawesome-free-solid'
+// import {faLongArrowAltRight} from '@fortawesome/fontawesome-free-solid'
 
 class ButtonLink extends React.Component {
   render() {
