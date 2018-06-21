@@ -1,19 +1,17 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import BackgroundImage from '../components/BackgroundImage'
 import { Emerge } from 'react-emergence'
 
-import heroBg from '../../public/static/images/herobg.jpg'
+import bgImage from '../../public/static/images/startup-desktop.jpg'
 
 const HowPage = () => (
   <div>
-    <section className="home-main container">
-      <div className="wrapper">
-        <div className="container flex scroll-wrapper">
-          {/* <img src={scrollSvg} alt="Scroll for more" className="scroll" /> */}
-        </div>
+    <section className="how-hero container bg-overlay">
+      <div className="flex">
+        <h1>Testing</h1>
       </div>
     </section>
-    <BackgroundImage imgUrl={heroBg} />
+    <BackgroundImage imgUrl={bgImage} />
 
     <div className="content-body">
       <section className="plan" name="plan-section">
@@ -36,5 +34,9 @@ const HowPage = () => (
     </div>
   </div>
 )
+
+HowPage.propTypes = {
+  route: PropTypes.object,
+}
 
 export default HowPage
