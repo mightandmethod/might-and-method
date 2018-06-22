@@ -91,10 +91,10 @@ class Index extends React.Component {
             >
               <div className="tab-navigation">
                 <TabList className="service-tabs__tab-list">
-                  <Tab className="service-tabs__tab">1. Discover your story</Tab>
-                  <Tab className="service-tabs__tab">2. Build your brand</Tab>
-                  <Tab className="service-tabs__tab">3. Craft your online presence</Tab>
-                  <Tab className="service-tabs__tab">4. Delight your customers</Tab>
+                  <Tab className="service-tabs__tab">Discover your story</Tab>
+                  <Tab className="service-tabs__tab">Build your brand</Tab>
+                  <Tab className="service-tabs__tab">Craft your online presence</Tab>
+                  <Tab className="service-tabs__tab">Delight your customers</Tab>
                 </TabList>
               </div>
 
