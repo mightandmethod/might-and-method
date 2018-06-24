@@ -2,7 +2,6 @@
 import React, {PropTypes} from 'react'
 import Link from 'gatsby-link'
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { Emerge } from 'react-emergence'
 import { animateScroll as scroll, scroller } from 'react-scroll'
 
 // Assets
@@ -67,18 +66,12 @@ class Index extends React.Component {
         <div className="content-body">
           <section className="plan" name="plan-section">
             <header>
-              <Emerge>
-                <h2>It takes more than just having a website to conquer your market, but creating an effective digital marketing strategy shouldn't keep you up at night. We're here to help.</h2>  
-              </Emerge>
+              <h2>It takes more than just having a website to conquer your market, but creating an effective digital marketing strategy shouldn't keep you up at night. We're here to help.</h2>  
 
               <div className="flex">
-                <Emerge>
-                  <p>Having a website is important, don't get us wrong, but it's only one piece of an effective, engaging digital marketing strategy. We've created a simple, proven process to enhance your brand, create a beautiful website, and delight your customers.</p>
-                </Emerge>
+                <p>Having a website is important, don't get us wrong, but it's only one piece of an effective, engaging digital marketing strategy. We've created a simple, proven process to enhance your brand, create a beautiful website, and delight your customers.</p>
 
-                <Emerge>
-                  <p>Leave behind the complexity, cost, and confusion of agencies, website builders, or trying to do it all yourself. Take control of your company's future with Might &amp; Method at your side.</p>
-                </Emerge>
+                <p>Leave behind the complexity, cost, and confusion of agencies, website builders, or trying to do it all yourself. Take control of your company's future with Might &amp; Method at your side.</p>
               </div>
             </header>
 
@@ -91,10 +84,10 @@ class Index extends React.Component {
             >
               <div className="tab-navigation">
                 <TabList className="service-tabs__tab-list">
-                  <Tab className="service-tabs__tab">Discover your story</Tab>
-                  <Tab className="service-tabs__tab">Build your brand</Tab>
-                  <Tab className="service-tabs__tab">Craft your online presence</Tab>
-                  <Tab className="service-tabs__tab">Delight your customers</Tab>
+                  <Tab className="service-tabs__tab"></Tab>
+                  <Tab className="service-tabs__tab"></Tab>
+                  <Tab className="service-tabs__tab"></Tab>
+                  <Tab className="service-tabs__tab"></Tab>
                 </TabList>
               </div>
 
@@ -118,7 +111,7 @@ class Index extends React.Component {
               <TabPanel className="service-tabs__panel">
                 <div>
                   <div>
-                    <h3>Brand is more than just a logo.</h3>
+                    <h3>Brand is more than a logo.</h3>
                     <p>We'll review your current branding through the lens of your story and help perfect (or create!) it. The goal is to create a personality for your company that will resonate the most with your customers. We'll go over your logo and colors, but just as importantly, your communication style, voice, and vibe.</p>
                     <a href="javascript:(0);"
                       onClick={() => this.switchTabs(2)}
@@ -182,22 +175,16 @@ class Index extends React.Component {
 
             <div className="content">
               <header>
-                <Emerge>
-                  <h1>About Might & Method</h1>
-                </Emerge>
+                <h1>About Might & Method</h1>
 
-                <Emerge>
-                  <p>In a nutshell of sorts, <span>Might & Method</span> is a digital agency, but we like to think of ourselves as digital alchemists &mdash; we convert <span>pixels</span> into <span>magic</span>. We have served many successful brands and created hundreds of websites and products over our <span>{(parseInt(new Date().getFullYear()) - 2010) * 2} years</span> of industry experience.</p>
-                </Emerge>
+                <p>In a nutshell of sorts, <span>Might & Method</span> is a digital agency, but we like to think of ourselves as digital alchemists &mdash; we convert <span>pixels</span> into <span>magic</span>. We have served many successful brands and created hundreds of websites and products over our <span>{(parseInt(new Date().getFullYear()) - 2010) * 2} years</span> of industry experience.</p>
               </header>
 
-              <Emerge>
-                <div style={{ width: '100%', textAlign: 'center' }}>
-                  <a href="javascript:(0);" onClick={() => this.scrollTo('work-section')}>
-                    See who we've helped <FontAwesomeIcon icon={faArrowDown} />
-                  </a>
-                </div>
-              </Emerge>
+              <div style={{ width: '100%', textAlign: 'center' }}>
+                <a href="javascript:(0);" onClick={() => this.scrollTo('work-section')}>
+                  See who we've helped <FontAwesomeIcon icon={faArrowDown} />
+                </a>
+              </div>
             </div>
           </section>
 

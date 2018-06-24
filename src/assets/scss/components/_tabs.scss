@@ -1,5 +1,6 @@
 .service-tabs {
   display: flex;
+  border-top: 1px solid #f4f4f4;
 
   .tab-navigation {
     position: relative;
@@ -12,13 +13,14 @@
     }
   }
   &__tab-list {
+    position: relative;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     flex-flow: column nowrap;
     overflow-y: hidden;
     overflow-x: scroll;
-    padding-left: 20px;
+    padding-left: 1.75em;
     box-shadow: inset -7px 0 7px -3px rgba(0,0,0,0.05);
 
     &:before {
@@ -27,7 +29,7 @@
       border-left: 3px dashed #e5e5e5;
       background: $white;
       position: absolute;
-      left: 1.75em;
+      left: 2.45em;
       height: 100%;
       z-index: 0;
     }
@@ -38,7 +40,7 @@
       width: 3px;
       background: $white;
       position: absolute;
-      left: 1.8em;
+      left: 2.5em;
       height: 100%;
       z-index: 0;
     }
@@ -67,6 +69,23 @@
           left: -0.225em;
           transition: all 0.25s ease-out;
         }
+      }
+
+      &:nth-child(1):after {
+        content: 'Discover your story';
+        display: inline;
+      }
+      &:nth-child(2):after {
+        content: 'Build your brand';
+        display: inline;
+      }
+      &:nth-child(3):after {
+        content: 'Craft your online presence';
+        display: inline;
+      }
+      &:nth-child(4):after {
+        content: 'Delight your customers';
+        display: inline;
       }
 
       @include media("<=medium") {
@@ -117,7 +136,7 @@
       display: flex;
 
       @include media(">=medium") {
-        padding: em(75px) 0;
+        padding: em(100px) 0;
       }
 
       > div {
@@ -194,7 +213,7 @@
           position: relative;
           display: inline-block;
           
-          border-radius: 10px;
+          border-radius: 7px;
 
           @include media(">=medium") {
             width: 80%;
@@ -203,7 +222,7 @@
           img {
             width: 100%;
             height: auto;
-            border-radius: 10px;
+            border-radius: 7px;
             box-shadow: 0 6px 15px 3px rgba(0,0,0,0.15);
           }
 
